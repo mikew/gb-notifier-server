@@ -1,0 +1,1832 @@
+<!doctype html>
+<html lang="en" itemscope id="" class="no-js ">
+
+<head><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vg8OUFFACQQBUFVbDg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(){}function r(t){function e(t){return t&&t instanceof n?t:t?a(t,i,o):o()}function u(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),s=a.length,f=0;s>f;f++)a[f].apply(i,r);var u=c[v[n]];return u&&u.push([w,n,r,i]),i}function d(t,e){m[t]=l(t).concat(e)}function l(t){return m[t]||[]}function p(t){return f[t]=f[t]||r(u)}function h(t,e){s(t,function(t,n){e=e||"feature",v[n]=e,e in c||(c[e]=[])})}var m={},v={},w={on:d,emit:u,get:p,listeners:l,context:e,buffer:h};return w}function o(){return new n}var i="nr@context",a=t("gos"),s=t(1),c={},f={},u=e.exports=r();u.backlog=c},{1:24,gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:24,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,a){try{f?f-=1:r("err",[a||new UncaughtException(t,e,n)])}catch(c){try{r("ierr",[c,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof s?s.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=t("loader"),s=window.onerror,c=!1,f=0;a.features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(1),t(2),"addEventListener"in window&&t(3),a.xhrWrappable&&t(4),c=!0)}i.on("fn-start",function(){c&&(f+=1)}),i.on("fn-err",function(t,e,r){c&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){c&&!this.thrown&&f>0&&(f-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:25,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3);var a=NREUM.o.EV;n.on("fn-start",function(t){var e=t[0];e instanceof a&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof a&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.clearResourceTimings?window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1):window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){for(var e=t;e&&!e.hasOwnProperty("addEventListener");)e=Object.getPrototypeOf(e);e&&r(e)}function r(t){a.inPlace(t,["addEventListener","removeEventListener"],"-",o)}function o(t){return t[1]}var i=t("ee").get("events"),a=t(1)(i),s=t("gos");e.exports=i,r(window),"getPrototypeOf"in Object?(n(document),n(XMLHttpRequest.prototype)):XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&r(XMLHttpRequest.prototype),i.on("addEventListener-start",function(t){if(t[1]){var e=t[1];if("function"==typeof e){var n=s(e,"nr@wrapped",function(){return a(e,"fn-",null,e.name||"anonymous")});this.wrapped=t[1]=n}else"function"==typeof e.handleEvent&&a.inPlace(e,["handleEvent"],"fn-")}}),i.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:26,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=t("ee").get("history"),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState","replaceState"],"-")},{1:26,ee:"QJf3ax"}],9:[function(t,e){var n=t("ee").get("raf"),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:26,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=i(t[0],"fn-",null,n)}function r(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=i(t[0],"fn-",this,n)}var o=t("ee").get("timer"),i=t(1)(o);e.exports=o,i.inPlace(window,["setTimeout","setImmediate"],"setTimer-"),i.inPlace(window,["setInterval"],"setInterval-"),i.inPlace(window,["clearTimeout","clearImmediate"],"clearTimeout-"),o.on("setInterval-start",n),o.on("setTimer-start",r)},{1:26,ee:"QJf3ax"}],11:[function(t,e){function n(t,e){e=e||this;var n=i.context(e);e.readyState>3&&!n.resolved&&(n.resolved=!0,i.emit("xhr-resolved",[],e));try{c.inPlace(e,l,"fn-",r)}catch(o){}}function r(t,e){return e}function o(t,e){for(var n in t)e[n]=t[n];return e}var i=t("ee").get("xhr"),a=t(1),s=t(2),c=s(i),f=s(a),u=NREUM.o,d=u.XHR,l=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout","onreadystatechange"];e.exports=i,window.XMLHttpRequest=function(t){var e=new d(t);try{i.emit("new-xhr",[e],e),e.hasOwnProperty("addEventListener")&&f.inPlace(e,["addEventListener","removeEventListener"],"-",r),e.addEventListener("readystatechange",n,!1)}catch(o){try{i.emit("internal-error",[o])}catch(a){}}return e},o(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:7,2:26,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var o=0;u>o;o++)t.removeEventListener(f[o],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=n(t,this.lastSize);if(i&&(r.rxSize=i),this.sameOrigin){var s=t.getResponseHeader("X-NewRelic-App-Data");s&&(e.cat=s.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,c.emit("xhr-done",[t],t),a("xhr",[e,r,this.startTime])}}}function n(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var o="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return r(o)}function r(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function o(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var i=t("loader");if(i.xhrWrappable){var a=t("handle"),s=t(2),c=t("ee"),f=["load","error","abort","timeout"],u=f.length,d=t(1),l=t(3),p=window.XMLHttpRequest;i.features.xhr=!0,t(5),t(4),c.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=e,n.ended=!1,n.xhrGuids={},n.lastSize=null,l&&(l>34||10>l)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),c.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),c.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),c.on("send-xhr-start",function(t,e){var n=this.metrics,o=t[0],i=this;if(n&&o){var a=r(o);a&&(n.txSize=a)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{c.emit("internal-error",[n])}catch(r){}}};for(var s=0;u>s;s++)e.addEventListener(f[s],this.listener,!1)}),c.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),c.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),c.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),c.on("addEventListener-end",function(t,e){e instanceof p&&"load"===t[0]&&c.emit("xhr-load-added",[t[1],t[2]],e)}),c.on("removeEventListener-end",function(t,e){e instanceof p&&"load"===t[0]&&c.emit("xhr-load-removed",[t[1],t[2]],e)}),c.on("fn-start",function(t,e,n){e instanceof p&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),c.on("fn-end",function(t,e){this.xhrCbStart&&c.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:15,4:11,5:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],14:[function(t,e){function n(t,e){return function(){r(t,[(new Date).getTime()].concat(i(arguments)),null,e)}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit"],s=["addPageAction"],c="api-";o(a,function(t,e){newrelic[e]=n(c+e,"api")}),o(s,function(t,e){newrelic[e]=n(c+e)}),e.exports=newrelic,newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),r("err",[t,(new Date).getTime()])}},{1:24,2:25,handle:"D5DuLP"}],15:[function(t,e){var n=0,r=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);r&&(n=+r[1]),e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n,o){r.buffer([t],o),r.emit(t,e,n)}var r=t("ee").get("handle");e.exports=n,n.ee=r},{ee:"QJf3ax"}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],G9z0Bl:[function(t,e){function n(){if(!h++){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){t[e]||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()],null,"api");var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()],null,"api")}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=window,f=c.document;NREUM.o={ST:setTimeout,XHR:c.XMLHttpRequest,REQ:c.Request,EV:c.Event,PR:c.Promise,MO:c.MutationObserver},t(2);var u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-885.min.js"},l=window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent),p=e.exports={offset:i(),origin:u,features:{},xhrWrappable:l};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()],null,"api");var h=0},{1:24,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],24:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],25:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],26:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@original",a=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,c;try{i=this,n=o(arguments),s="function"==typeof r?r(n,i):r||{}}catch(u){d([u,"",[n,i,a],s])}f(e+"start",[n,i,a],s);try{return c=t.apply(i,n)}catch(l){throw f(e+"err",[n,i,l],s),l}finally{f(e+"end",[n,i,c],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=t,u(t,nrWrapper),nrWrapper)}function c(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function f(e,n,r){if(!s){s=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}s=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=c,e.flag=i,e}},{1:25,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+  
+  <title>Giant Bomb - Video game reviews, videos, forums and wiki.</title>
+
+  <meta name="description" content="The largest video game database online, Giant Bomb features Game Reviews, News, Videos, and Forums for the latest in PS4, Xbox One, PS3, Xbox 360, Wii, PSP, DS, 3DS, NGP, and more!">
+    <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        
+    <meta name="application-name" content="Giant Bomb"/>
+  <meta name="msapplication-TileColor" content="#26292B"/>
+  <meta name="msapplication-TileImage" content="http://static.giantbomb.com/bundles/giantbombsite/images//win8pin.png"/>
+
+  
+  
+    <meta name="userAuthState" content="noUser"/>
+
+            <meta name="modal-cdn-url" content="http://static.giantbomb.com/js/modals.json">
+      
+      <meta name='js-sort-filter-text' content='no'>
+  
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="abTestVariant" content="ef96d5d4e1ce904192991c55cd18a0dc">
+  
+  
+    <meta itemprop="cdnHost" content="http://static.giantbomb.com">
+      <link rel="shortcut icon" href="/bundles/phoenixsite/images/core/loose/favicon-gb.ico" />
+  
+      <link rel="apple-touch-icon-precomposed" href="/bundles/phoenixsite/images/core/loose/apple-touch-icon-precomposed-gb.png"/>
+  
+  <meta id="site-id-meta" name="site-id-meta" itemprop="site-id" content="1018">
+
+      <meta id="view-guid-meta" name="view-guid-meta" itemprop="view-guid" content="">
+
+
+                
+              
+    
+        
+    
+    <meta id="ad-settings" class="js-post-render-tracking-consumer ad-settings" itemprop="ad-settings" content="{&quot;service&quot;:&quot;dart&quot;,&quot;client&quot;:&quot;xfp&quot;,&quot;deferred&quot;:true,&quot;load_in_head&quot;:&quot;gpt&quot;,&quot;single_request&quot;:true,&quot;disable_initial_load&quot;:true,&quot;enable_callback&quot;:true,&quot;enable_collapse_empty_divs&quot;:true,&quot;enable_guilt&quot;:false,&quot;script&quot;:&quot;\/\/www.googletagservices.com\/tag\/js\/gpt.js&quot;,&quot;unit_name&quot;:&quot;\/8264\/aw-giantbomb\/home&quot;,&quot;target_params&quot;:{&quot;session&quot;:&quot;e&quot;,&quot;test&quot;:&quot;{abTestLabelDart}&quot;,&quot;ptype&quot;:&quot;homepage&quot;,&quot;env&quot;:&quot;dev&quot;,&quot;user&quot;:&quot;anon&quot;},&quot;slot_order&quot;:[&quot;leader_top&quot;,&quot;leader_plus_top&quot;,&quot;mpu_top&quot;,&quot;mpu_plus_top&quot;,&quot;skin_top&quot;,&quot;omnibar_top&quot;,&quot;nav_logo_top&quot;,&quot;logo_top&quot;,&quot;interstitial&quot;,&quot;native-top&quot;,&quot;incontent-ad&quot;,&quot;mpu_bottom&quot;,&quot;leader_bottom&quot;,&quot;companion_ad&quot;,&quot;ytembed_top&quot;,&quot;overlay_leader_top&quot;,&quot;overlay_mpu_top&quot;],&quot;mapped_units&quot;:{&quot;interstitial&quot;:{&quot;outOfPage&quot;:true},&quot;skin_top&quot;:{&quot;size&quot;:[[1600,1000]],&quot;target&quot;:{&quot;pos&quot;:&quot;top&quot;}},&quot;leader_plus_top&quot;:{&quot;size&quot;:[[970,66],[728,90],[970,90],[970,250]],&quot;target&quot;:{&quot;pos&quot;:&quot;top&quot;}},&quot;mpu_top&quot;:{&quot;size&quot;:[[300,250]],&quot;target&quot;:{&quot;pos&quot;:&quot;top&quot;}},&quot;mpu_bottom&quot;:{&quot;size&quot;:[[300,250]],&quot;target&quot;:{&quot;pos&quot;:&quot;bottom&quot;}},&quot;leader_bottom&quot;:{&quot;size&quot;:[[728,90],[970,66]],&quot;target&quot;:{&quot;pos&quot;:&quot;bottom&quot;}},&quot;native-top&quot;:{&quot;size&quot;:[[11,11]],&quot;target&quot;:{&quot;pos&quot;:&quot;top&quot;}}},&quot;region&quot;:&quot;us&quot;}">
+
+    
+                                  <meta id="qualtrics-settings"
+      itemprop="qualtrics-settings"
+      content="{&quot;id&quot;:&quot;ZN_6Wi53UsadGyJ7Tf&quot;,&quot;script&quot;:&quot;\/\/zn_6wi53usadgyj7tf-cbs.siteintercept.qualtrics.com\/WRSiteInterceptEngine\/&quot;}" />
+        
+  
+  
+      <meta property="og:image" content="http://static.giantbomb.com/bundles/giantbombsite/images//logo.png"/>
+  
+                <meta id="ZeroClipBoardSwf" itemprop="ZeroClipBoardSwf" name="ZeroClipBoardSwf" content="/bundles/phoenixsite/js/libs/zeroclipboard/ZeroClipboard.swf?9d42341e6a44e06f902a2025c463cae5">
+      
+
+            <meta id="richTextEditorTheme" itemprop="richTextEditorTheme" content="white" data-themes="{&quot;white&quot;:&quot;http:\/\/static.giantbomb.com\/bundles\/giantbombsite\/css\/wysiwyg_white-aeddbc185b0d69ec62b047c6ad87fe3d.css&quot;,&quot;black&quot;:&quot;http:\/\/static.giantbomb.com\/bundles\/giantbombsite\/css\/wysiwyg_black-aeddbc185b0d69ec62b047c6ad87fe3d.css&quot;}">
+
+        <script src="http://static.giantbomb.com/js/compiled/header_js.js?9d42341e6a44e06f902a2025c463cae5" type="text/javascript"></script>
+  
+         <!--[if !IE]> --><link id="skin-color" rel="stylesheet" href="http://static.giantbomb.com/bundles/giantbombsite/css/giantbomb_white-aeddbc185b0d69ec62b047c6ad87fe3d.css"><!-- <![endif]--><!--[if IE]><link id="skin-color-0" rel="stylesheet" href="http://static.giantbomb.com/bundles/giantbombsite/css/giantbomb_white_split1-aeddbc185b0d69ec62b047c6ad87fe3d.css"><link id="skin-color-1" rel="stylesheet" href="http://static.giantbomb.com/bundles/giantbombsite/css/giantbomb_white_split2-aeddbc185b0d69ec62b047c6ad87fe3d.css"><![endif]-->
+
+          <meta id="kCode" itemprop="kCode" name="kCode" content="/konami-code/3015-544/">
+
+    <meta name="google-site-verification" content="nqbCX2TCwfzVswSOpJNJUKUscQcYA0BZ4e5fQVOSzuI" />
+
+
+                              <script type="text/javascript" charset="utf-8">
+        (function(G,o,O,g,L,e){G[g]=G[g]||function(){(G[g]['q']=G[g]['q']||[]).push(
+        arguments)},G[g]['t']=1*new Date;L=o.createElement(O),e=o.getElementsByTagName(
+        O)[0];L.async=1;L.src='//www.google.com/adsense/search/async-ads.js';
+        e.parentNode.insertBefore(L,e)})(window,document,'script','_googCsa');
+      </script>        <script type="text/javascript">
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+        (function () {
+          var gads = document.createElement("script");
+          gads.async = true;
+          gads.id = "ad-service-client";
+          gads.className = "js-spof";
+          gads.type = "text/javascript";
+                    gads.setAttribute('onerror',"this.setAttribute('data-is-spof','true')");
+          gads.src = "//www.googletagservices.com/tag/js/gpt.js";
+          var node = document.getElementsByTagName("script")[0];
+          node.parentNode.insertBefore(gads, node);
+                  })();
+      </script>              <script id="bsmloader" type="text/javascript">
+  (function () {
+    var bsTimeoutId;
+
+    var bsmLoader = document.getElementById('bsmloader');
+
+    function fireAdCall() {
+      clearTimeout(bsTimeoutId);
+      bsTimeoutId = null;
+      bsmLoader.setAttribute('data-loaded', '1');
+    }
+
+    function nucleusCompleteHandler(payload) {
+      fireAdCall();
+    }
+
+    bsTimeoutId = setTimeout(bidTimeoutExpired, 500);
+    function bidTimeoutExpired() {
+      fireAdCall();
+    }
+
+    (function() {
+      var bsm_nucleus = document.createElement("script");
+      bsm_nucleus.async = true;
+      bsm_nucleus.type = "text/javascript";
+      var useSSL = "https:" == document.location.protocol;
+      bsm_nucleus.id = 'cx-nuke';
+      bsm_nucleus.src = (useSSL ? "https:" : "http:") + "//cdn.beanstock.com/pub/cx/flagTag.js";
+      bsm_nucleus.setAttribute('data-bsm-pub', "cbsinteractive");
+      bsm_nucleus.setAttribute('data-bsm-pub-zone', "giantbomb.com/nucleus");
+      bsm_nucleus.setAttribute('data-bsm-sizes', "728x90 300x250");
+      bsm_nucleus.setAttribute('data-bsm-zone-map-url', "//cdn.beanstock.com/pub/cbsinteractive/zm.js");
+      bsm_nucleus.setAttribute('data-bsm-event-host', "//helix.beanstock.co");
+      bsm_nucleus.setAttribute('data-bsm-flag', "true");
+      bsm_nucleus.setAttribute('data-bsm-version', "v3");
+      bsm_nucleus.addEventListener("onNucleusComplete", nucleusCompleteHandler);
+      var node = document.getElementsByTagName("script")[0];
+      node.parentNode.insertBefore(bsm_nucleus, node);
+    })();
+  })();
+
+</script>
+
+              <style>
+
+/*
+!LAST-MINUTE - 2/16/2016 - WC
+Removing social buttons temporarily because Jeff really doesn't like them.  
+Please remove tomorrow 2/17/16 when we have discussed this. Sorry Dan :(
+*/
+.social-media-share {
+display: none;
+}
+
+/* Fix to display score selection on user reviews */
+.js-score-input.score.score-0 {
+display: inline-block !important;
+}
+.kubrick-lead.chat .kubrick-info {
+min-height: 438px;
+}
+/* Hot fix for forums when member skin is running */
+.body-home--e3.skin-no #forums {
+padding-right: 30px;
+}
+.spartan .player-info {
+  display: block;
+}
+
+.inboxNotification .header-avatar__image { width: 30px; }
+
+/* Christmas Eve patch! Promo selectors incorrect after latest updates, anchor styles breaking */
+
+.promo-strip a {
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    float: left;
+}
+.text-left { text-align: left !important; }
+
+.body-home--e3.skin-no #site { background: transparent none; }
+
+/* Added by Erica to override Squarespace promo on GOTY2015 */
+.goty-behindthescenes img {
+    padding: 100% 100% 0px 0px;
+    background: url('http://static.giantbomb.com/uploads/original/30/300589/2808917-behindthescenes-override.jpg');
+    background-size: cover;
+}
+
+</style>      
+    <meta name='pageType' data-type='frontdoor'/>
+
+        
+        <script type="text/javascript" data-sitefont="typekit" src="//fonts.cbsi.com/bzu3juu.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+
+  
+</head>
+
+
+<body id="default-body" class="body-home skin-no col-2-template " style="display: block !important" >
+      <section id="message-block" class="message-success" style="display: none">
+                </section>
+
+    <div id="site-main">
+
+          
+
+                    
+            
+<div id="masthead"><div id="nav-info"><div class="container"><div class="header"><a href="/" class="header-logo header-section">GiantBomb.com</a><div class="header-promotion header-section header-section--border"><div class="header-promotion__wrapper"><span class="header-promo url header-promo--pop  header-promo--premium header-promo--open " style="background-image:url(http://static.giantbomb.com/uploads/screen_medium/0/39/2832532-screenhunter_1109+mar.jpg)"><p><a href="/upgrade/" class="ellipsis">The Powerbombcast Episode 21 - The Slap Heard &#039;Round the World</a></p><time>
+          Latest Premium Content        </time></span><a href="/upgrade/" class="header-upsell hide-mobile header-upsell--default"><p>Become Premium to Watch</p><figure class="avatar subscriber yearly"><img src="http://static.giantbomb.com/bundles/phoenixsite/images/core/loose/default-header-avatar.png" /></figure></a></div></div><form action="/search/" method="get" id="siteSearch" class="search header-search header-section header-section--border"><fieldset class="icon icon-search"><input type="text" id="search-main" name="q"
+                                  placeholder="Search Giant Bomb"
+                              autocomplete="off" class="header-search__input ready" value="" /><div id="search-toggle" class="header-search__toggle dropnav"><a href="#">Options <i class="icon icon-cog"></i></a><div id="search-filters" class="header-search__filters search-filters default double dropnav-menu bordered"><dl class="filters"><dt class="search-group-wiki">Wiki</dt><dd class="search-group-wiki"><ul><li><label><input type="checkbox" name="indices[]" value="accessory" checked>
+                            Accessories
+                          </label></li><li><label><input type="checkbox" name="indices[]" value="character" checked>
+                            Characters
+                          </label></li><li><label><input type="checkbox" name="indices[]" value="company" checked>
+                            Companies
+                          </label></li><li><label><input type="checkbox" name="indices[]" value="concept" checked>
+                            Concepts
+                          </label></li><li><label><input type="checkbox" name="indices[]" value="event" checked>
+                            Events
+                          </label></li><li><label><input type="checkbox" name="indices[]" value="franchise" checked>
+                            Franchises
+                          </label></li><li><label><input type="checkbox" name="indices[]" value="game" checked>
+                            Games
+                          </label></li><li><label><input type="checkbox" name="indices[]" value="location" checked>
+                            Locations
+                          </label></li><li><label><input type="checkbox" name="indices[]" value="object" checked>
+                            Objects
+                          </label></li><li><label><input type="checkbox" name="indices[]" value="person" checked>
+                            People
+                          </label></li><li><label><input type="checkbox" name="indices[]" value="platform" checked>
+                            Platforms
+                          </label></li><li><label><input type="checkbox" name="indices[]" value="thing" checked>
+                            Things
+                          </label></li></ul></dd><dt class="search-group-editorial">Editorial</dt><dd class="search-group-editorial"><ul><li><label><input type="checkbox" name="indices[]" value="article"   >
+                                Articles
+                              </label></li><li><label><input type="checkbox" name="indices[]" value="imagegallery"   >
+                                Imagegalleries
+                              </label></li><li><label><input type="checkbox" name="indices[]" value="podcast"   >
+                                Podcasts
+                              </label></li><li><label><input type="checkbox" name="indices[]" value="review"   >
+                                Reviews
+                              </label></li><li><label><input type="checkbox" name="indices[]" value="sitepoll"   >
+                                Sitepolls
+                              </label></li><li><label><input type="checkbox" name="indices[]" value="video"   checked>
+                                Videos
+                              </label></li></ul></dd><dt class="search-group-editorial">Community</dt><dd class="search-group-editorial"><ul><li><label><input type="checkbox" name="indices[]" value="user">
+                              Users
+                            </label></li></ul></dd></dl><div class="search-group-toggle"><a class="checkall" rel="nofollow">Check All</a><a class="uncheck" rel="nofollow">Uncheck All</a><a class="wikionly" rel="nofollow">Wiki Only</a></div></div></div></fieldset></form><div class="header-auth header-section header-section--border"><a href="https://auth.giantbomb.com/login/" class="header-auth__login">Login</a><a href="https://auth.giantbomb.com/signup/" class="header-auth__join">Join</a></div><div class="header-themes header-section"><div id="skin-switch" class="header-skinSwitch" data-default="giantbomb_white"><a href="#" rel="giantbomb_white" data-rel-url="http://static.giantbomb.com/bundles/giantbombsite/css/giantbomb_white-aeddbc185b0d69ec62b047c6ad87fe3d.css" class="skin-switch-btn white" rel="nofollow">A</a><a href="#" rel="giantbomb_black" data-rel-url="http://static.giantbomb.com/bundles/giantbombsite/css/giantbomb_black-aeddbc185b0d69ec62b047c6ad87fe3d.css" class="skin-switch-btn black" rel="nofollow">A</a></div></div></div></div></div><section id="nav-main-hold"><nav id="nav-main" class="container"><ul><li><a href="/news/">News</a></li><li class="dropnav dropdown"><a class="dropdown-toggle icon icon-caret-down" data-toggle="dropdown" href="#" rel="nofollow"></a><a href="/games/">Wiki</a><dl class="dropnav-menu double col2 left"><dd><a href="/games/">Games</a></dd><dd><a href="/franchises/">Franchises</a></dd><dd><a href="/characters/">Characters</a></dd><dd><a href="/platforms/">Platforms</a></dd><dd><a href="/people/">People</a></dd><dd><a href="/companies/">Companies</a></dd><dd><a href="/objects/">Objects</a></dd><dd><a href="/concepts/">Concepts</a></dd><dd><a href="/locations/">Locations</a></dd><dd><a href="/accessories/">Accessories</a></dd></dl></li><li><a href="/new-games/">New Games</a></li><li class="dropnav"><a href="/reviews/">Reviews</a><dl class="dropnav-menu triple left reviews"><dt><a href="/reviews/">Latest Reviews</a></dt><dd><a href="/reviews/plants-vs-zombies-garden-warfare-2-review/1900-737/"><div class="imgboxart"><img src="http://static.giantbomb.com/uploads/square_tiny/0/1992/2761910-719facholhl._sl1000_.jpg" alt="Plants vs. Zombies: Garden Warfare 2 Review"></div><h4>Plants vs. Zombies: Garden Warfare 2 Review</h4><span class="score score-special score-4"></span><p>This oddball shooter sequel piles on more of everything from the first game, which is exactly what that game needed.</p></a></dd><dd><a href="/reviews/superhot-review/1900-736/"><div class="imgboxart"><img src="http://static.giantbomb.com/uploads/square_tiny/18/187968/2686875-superhot_mainpromo.jpg" alt="Superhot Review"></div><h4>Superhot Review</h4><span class="score score-special score-4"></span><p>Superhot is an intense and thrilling blend of action and puzzle with a solid bit of narrative to tie its murderous mysteries together into something worth seeing.</p></a></dd><dd><a href="/reviews/far-cry-primal-review/1900-735/"><div class="imgboxart"><img src="http://static.giantbomb.com/uploads/square_tiny/8/81005/2788294-0001823001-98095.jpg" alt="Far Cry: Primal Review"></div><h4>Far Cry: Primal Review</h4><span class="score score-special score-3"></span><p>Far Cry: Primal feels like one long, optional side mission.</p></a></dd></dl></li><li class="dropnav dropdown"><a class="dropdown-toggle icon icon-caret-down" data-toggle="dropdown" href="#" rel="nofollow"></a><a href="/videos/">Videos</a><dl class="dropnav-menu double col2 left"><dd><a href="/videos/popular/">Popular</a></dd><dd><a href="/videos/latest/">Latest</a></dd><!-- GiantbombSiteBundle:Core:headerVideos|N|16:38:59 --><dd><a href="/videos/best-of-giant-bomb/">Best of Giant Bomb</a></dd><dd><a href="/videos/breaking-brad/">Breaking Brad</a></dd><dd><a href="/videos/encyclopedia-bombastica/">Encyclopedia Bombastica</a></dd><dd><a href="/videos/endurance-run/">Endurance Run</a></dd><dd><a href="/videos/events/">Events</a></dd><dd><a href="/videos/extra-life/">Extra Life</a></dd><dd><a href="/videos/features/">Features</a></dd><dd><a href="/videos/game-tapes/">Game Tapes</a></dd><dd><a href="/videos/metal-gear-scanlon/">Metal Gear Scanlon</a></dd><dd><a href="/videos/premium/">Premium</a></dd><dd><a href="/videos/quick-looks/">Quick Looks</a></dd><dd><a href="/videos/reviews/">Reviews</a></dd><dd><a href="/videos/tang/">TANG</a></dd><dd><a href="/videos/trailers/">Trailers</a></dd><dd><a href="/videos/unfinished/">Unfinished</a></dd><dd><a href="/videos/vinnyvania/">VinnyVania</a></dd><!-- /GiantbombSiteBundle:Core:headerVideos --></dl></li><li class="dropnav dropdown"><a class="dropdown-toggle icon icon-caret-down" data-toggle="dropdown" href="#" rel="nofollow"></a><a href="/podcasts/"><!-- GiantbombSiteBundle:Core:headerPodcasts|N|16:38:59 -->
+Podcasts <i class="nav-new"></i></a><dl class="dropnav-menu double left"><dd><a href="/podcasts/giant-bombcast/">
+          Giant Bombcast
+                  </a></dd><dd><a href="/podcasts/premiumbombcast/">
+          Giant Bombcast (Premium)
+                  </a></dd><dd><a href="/podcasts/premium/">
+          Premium Podcasts
+                      <i class="icon icon-star nav-new-icon"></i></a></dd><dd><a href="/podcasts/eight-four-play/">
+          8-4 Play
+                  </a></dd><dd><a href="/podcasts/giant-bomb-gaming-minute/">
+          Giant Bomb Gaming Minute
+                  </a></dd><dd><a href="/podcasts/giant-bomb-presents/">
+          Giant Bomb Presents
+                  </a></dd><dd><a href="/podcasts/bombin-the-a-m-with-scoops-and-the-wolf/">
+          Bombin&#039; the A.M. With Scoops and the Wolf!
+                  </a></dd><dd><a href="/podcasts/beastcast/">
+          The Giant Beastcast
+                  </a></dd><dd><a href="/podcasts/beastcast-premium/">
+          The Giant Beastcast (Premium)
+                  </a></dd><dd><a href="/podcasts/altf1/">
+          Alt+F1
+                  </a></dd></dl><!-- /GiantbombSiteBundle:Core:headerPodcasts --></a></li><li class="dropnav"><a href="/users">Users</a><dl class="dropnav-menu double col2 left"><dd><a href="/users">Top Users</a></dd><dd><a href="/users/activity">Activity Feed</a></dd><dd><a href="/lists/">User Lists</a></dd><dd><a href="/community/">Bomb Shelter</a></dd></dl></li><li><a href="http://store.giantbomb.com">Store</a></li><li class="dropnav dropdown"><a class="dropdown-toggle icon icon-caret-down" data-toggle="dropdown" href="#"></a><a href="/forums/">Forums</a><dl class="dropnav-menu triple col2 right"><!-- PhoenixSiteBundle:Core:headerGeneralBoards_anon|N|16:38:59 --><dd><a href="/forums/general-discussion-30/">
+      General Discussion
+    </a></dd><dd><a href="/forums/off-topic-31/">
+      Off-Topic
+    </a></dd><dd><a href="/forums/bombcast-32/">
+      Bombcast
+    </a></dd><dd><a href="/forums/bug-reporting-33/">
+      Bug Reporting
+    </a></dd><dd><a href="/forums/delete-combine-requests-34/">
+      Delete &amp; Combine Requests
+    </a></dd><dd><a href="/forums/editing-tools-820/">
+      Editing &amp; Tools
+    </a></dd><dd><a href="/forums/api-developers-3017/">
+      API Developers
+    </a></dd><!-- /PhoenixSiteBundle:Core:headerGeneralBoards_anon --><!-- PhoenixSiteBundle:Core:headerWikiBoards|N|16:38:58 --><dt>Popular wiki forums</dt><dd><a href="/tom-clancy-s-the-division/3030-42918/forums/">
+      Tom Clancy&#039;s The Division
+    </a></dd><dd><a href="/street-fighter-v/3030-48320/forums/">
+      Street Fighter V
+    </a></dd><dd><a href="/xbox-one/3045-145/forums/">
+      Xbox One
+    </a></dd><dd><a href="/no-man-s-sky/3030-44656/forums/">
+      No Man&#039;s Sky
+    </a></dd><dd><a href="/pc/3045-94/forums/">
+      PC
+    </a></dd><dd><a href="/stardew-valley/3030-50899/forums/">
+      Stardew Valley
+    </a></dd><dd><a href="/pokemon/3015-549/forums/">
+      Pokémon
+    </a></dd><dd><a href="/lionhead-studios-ltd/3010-872/forums/">
+      Lionhead Studios Ltd.
+    </a></dd><dd><a href="/superhot/3030-43663/forums/">
+      Superhot
+    </a></dd><dd><a href="/black-desert/3030-44025/forums/">
+      Black Desert
+    </a></dd><!-- /PhoenixSiteBundle:Core:headerWikiBoards --></dl></li></ul></nav></section></div>
+      
+                <div id="mantle_skin">
+          <div id="wrapper">
+
+                    <div class="nav-mobile">
+            <a id="js-btn-mobile-nav" class="btn-mobile btn-mobile-nav"><i class="icon icon-reorder"></i></a>
+            <a id="js-btn-mobile-search" class="btn-mobile btn-mobile-search"><i class="icon icon-search"></i></a>
+            <a href="/" class="logo-site"></a>
+          </div>
+          
+          
+            <div id="skin_top-wrap" class="js-mapped-ad mapped-ad mapped-skin_top mapped-skin_top-dart" ><div id="skin_top" class="ad-wrap ad-wrap-skin_top"></div></div><div id="leader_plus_top-wrap" class="js-mapped-ad mapped-ad mapped-leader_plus_top mapped-leader_plus_top-dart" ><div id="leader_plus_top" class="ad-wrap ad-wrap-leader_plus_top"></div></div>
+              
+      
+            <div class="kubrick-lead">
+  <div class="kubrick-promo-podcast">
+    <div class="container row">
+
+      <div class="kubrick-info span6">
+
+        <a href="/podcasts/giant-bombcast-03082016/1600-1529/" data-pinned="0" data-promo-id="11381" data-top-slot-allowed="1">
+          <h2>Giant Bombcast 03/08/2016</h2>
+          <p>This week&#039;s show is packed to the gills with No Man&#039;s Sky, The Division, Microsoft studio closures, the weird future of the Xbox, the strange saga of the Coleco Chameleon, some Street Fighter emails, the cleanliness of San Francisco sidewalks, and more!</p>
+          <p class="stats">
+            <i class="icon icon-comments"></i> 35 Comments
+          </p>
+        </a>
+
+                                   <div class="podcast-sources">
+                      <a href="https://itunes.apple.com/us/podcast/giant-bombcast/id274450056" class="btn btn-info"><i class="icon icon-apple"></i> Subscribe on iTunes</a>
+                    <a href="http://v.giantbomb.com/podcast/Giant_Bombcast_03_08_2016-03-08-2016-9252668733.mp3" id="top_podcast" class="btn btn-primary" rel="nofollow"><i class="icon icon-headphones"></i> Download MP3</a>
+                      <a href="/podcast-xml/giant-bombcast" class="btn btn-warning"><i class="icon icon-rss"></i> RSS</a>
+                    </div>
+                  
+      </div>
+
+          <div class="span6">
+      <div id="js-pod-player" class="av-box av-podcast podcast-not-active">
+  <figure class="av-podcast-image">
+    <img src="http://static.giantbomb.com/uploads/screen_large/0/30/2831580-creatures.jpg" />
+  </figure>
+
+  <div class="av-spool-hold"><figure class="av-spool"></figure></div>
+  <div class="av-spool-hold"><figure class="av-spool"></figure></div>
+
+  <ul class="av-controls">
+
+    <li class="av-speaker">
+        <span></span>
+       <span>  </span>
+      <span>    </span>
+       <span>  </span>
+        <span></span>
+    </li>
+
+    <li class="av-switch">
+      <a href="#" id="js-pod-play" class="av-icn av-play">
+        <i class="icon icon-play"></i> Play
+        <span></span>
+        <span></span>
+      </a>
+      <a href="#" id="js-pod-pause" class="av-icn av-pause dn">
+        <i class="icon icon-stop"></i> Stop
+        <span></span>
+        <span></span>
+      </a>
+    </li>
+
+    <li>
+      <div id="js-pod-time" class="av-time">0:00:00/0:00:00</div>
+
+      <ul class="av-options">
+        <li id="js-pod-audio" class="av-menu-hit av-audio">
+          <a href="#" id="js-pod-mute" class="av-icn av-volume-mute"></a>
+          <a href="#" id="js-pod-unmute" class="av-icn av-volume-unmute dn"></a>
+          <div class="av-menu">
+            <div id="js-pod-volume-bar" class="av-volume-bar">
+              <div id="js-pod-volume-handle" class="av-volume-handle"></div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <div id="js-pod-buffer" class="av-buffer">
+        <div class="av-buffer-pad">
+          <div id="js-pod-loaded" class="av-loaded" style="width: 0%;"></div>
+          <div id="js-pod-position" class="av-position" style="width: 0%;"></div>
+          <div id="js-pod-seek-display" class="av-seek dn" style="left: 0px; margin-left: -27px;">00:00:00</div>
+        </div>
+      </div>
+
+    </li>
+
+  </ul>
+
+</div>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+        <section class="promo-strip">
+    <div class="promo-strip-width">
+      <ul>
+
+                                                    <li style="background-image: url(http://static.giantbomb.com/uploads/screen_large/0/39/2832532-screenhunter_1109+mar.jpg)" class="content--premium"><div>
+                      <a href="/podcasts/the-powerbombcast-episode-21-the-slap-heard-round-/1600-1528/" data-pinned="0"  data-promo-id="11380" data-top-slot-allowed="0">
+                        <div class="hdr type-podcast hdr-premium">
+                <h4>
+                                      Premium
+                                                        <i class="icon icon-headphones"></i>
+                                    Podcast
+                </h4>
+
+                <h3>The Powerbombcast Episode 21 - The Slap Heard &#039;Round the World </h3>
+                              </div>
+              <!-- <div class="type podcast"></div> -->
+            </a>
+          </div>
+        </li>
+                                              <li style="background-image: url(http://static.giantbomb.com/uploads/screen_large/0/31/2832066-cp_naruto_ninjastorm_ql.00_00_30_56.still001.jpg)" ><div>
+                      <a href="/videos/quick-look-naruto-shippuden-ultimate-ninja-storm-4/2300-11026/" data-pinned="0"  data-promo-id="11373" data-top-slot-allowed="1">
+                        <div class="hdr type-video ">
+                <h4>
+                                                        <i class="icon icon-play"></i>
+                                    Video
+                </h4>
+
+                <h3>Quick Look: Naruto Shippuden: Ultimate Ninja Storm 4 </h3>
+                              </div>
+              <!-- <div class="type video"></div> -->
+            </a>
+          </div>
+        </li>
+                                              <li style="background-image: url(http://static.giantbomb.com/uploads/screen_large/2/23546/2832021-us.jpg)" ><div>
+                      <a href="/videos/quick-look-stardew-valley/2300-11023/" data-pinned="0"  data-promo-id="11368" data-top-slot-allowed="1">
+                        <div class="hdr type-video ">
+                <h4>
+                                                        <i class="icon icon-play"></i>
+                                    Video
+                </h4>
+
+                <h3>Quick Look: Stardew Valley </h3>
+                              </div>
+              <!-- <div class="type video"></div> -->
+            </a>
+          </div>
+        </li>
+                    </ul>
+    </div>
+  </section>
+
+  <div id="site" role="main">
+    <div id="default-content" class=" container row">
+                  <div class="primary-content span8 ">
+                                    
+    <section id="river">
+        
+
+<dl class="feed-hdr"  data-feed-group="front-door">
+	<dt>Latest Stories</dt>
+		<dd>
+		<a href="#" id="feed-view-grid" class="feed-view icon icon-th-large " rel="nofollow">
+			Grid
+		</a>
+	</dd>
+	
+	
+		<dd>
+		<a href="#" id="feed-view-river" class="feed-view icon icon-reorder  on " rel="nofollow">
+			List
+		</a>
+	</dd>
+	</dl>
+
+    
+      
+
+
+<ul class="editorial homepage  thirds js-load-forever-container">
+                <li >
+        <a href="/articles/fable-legends-and-project-knoxville-canceled-by-mi/1100-5410/">
+          <div class="img editorial-img imgflare article">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/0/2840/2643404-fable-legends-rgb-8e2ss-horiz-6000-preview.jpg" alt="Fable Legends and Project Knoxville Canceled by Microsoft, Studios Facing Closure">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 116</i>
+                          </div>
+          </div>
+
+          <h3 class="editorial-title">Fable Legends and Project Knoxville Canceled by Microsoft, Studios Facing Closure</h3>
+          
+           <p class="editorial-byline">
+            by
+            Alex&nbsp;Navarro | Mar. 7 7:28am </p>
+
+          <p class="editorial-excerpt">
+            Microsoft has begun discussions with Lionhead employees about shuttering the studio, while Press Play has been definitively shut down.
+          </p>
+        </a>
+      </li>
+        
+                    <li >
+        <a href="/videos/kerbal-project-beast-part-11/2300-11027/">
+          <div class="img editorial-img imgflare video">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/0/31/2832068-vf_projectbeast_pt11.00_10_10_31.still015.jpg" alt="Kerbal: Project B.E.A.S.T - Part 11">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 77</i>
+                          </div>
+          </div>
+
+          <h3 class="editorial-title">Kerbal: Project B.E.A.S.T - Part 11</h3>
+          
+           <p class="editorial-byline">
+            by
+            Vinny&nbsp;Caravella | Mar. 7 3:00am </p>
+
+          <p class="editorial-excerpt">
+            We attempt to bring our rescued hero back home. We&#039;ve done this before, right? Once.
+          </p>
+        </a>
+      </li>
+        
+                    <li >
+        <a href="/videos/quick-look-talisman-the-horus-heresy/2300-11025/">
+          <div class="img editorial-img imgflare video">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/0/31/2832065-cp_talisman_ql.00_21_27_47.still002.jpg" alt="Quick Look: Talisman: The Horus Heresy">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 62</i>
+                          </div>
+          </div>
+
+          <h3 class="editorial-title">Quick Look: Talisman: The Horus Heresy</h3>
+          
+           <p class="editorial-byline">
+            by
+            Vinny&nbsp;Caravella | Mar. 6 6:00am </p>
+
+          <p class="editorial-excerpt">
+            We jump into some 40K branded Talisman. Let&#039;s hope this resolves a bit faster than the actual Horus Heresy...
+          </p>
+        </a>
+      </li>
+        
+                    <li >
+        <a href="/articles/the-community-spotlight-03052016/1100-5409/">
+          <div class="img editorial-img imgflare article">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/0/1992/2832234-screen+shot+2016-03-05+at+4.37.53+pm.png" alt="The Community Spotlight - 03/05/2016">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 18</i>
+                          </div>
+          </div>
+
+          <h3 class="editorial-title">The Community Spotlight - 03/05/2016</h3>
+          
+           <p class="editorial-byline">
+            by
+            Brad &#039;Marino&#039;&nbsp;Lynch | Mar. 5 2:13pm </p>
+
+          <p class="editorial-excerpt">
+            With the likes of Fire Emblem, Bravely Second, and Pokémon, it&#039;s a great time to be a fan of RPGs. Now, can someone tell me what the hell a Stardew is?
+          </p>
+        </a>
+      </li>
+        
+          <div id="native-top-wrap" class="js-mapped-ad mapped-ad mapped-native-top mapped-native-top-dart ad--river-native" ><div id="native-top" class="ad-wrap ad-wrap-native-top"></div></div>                    <li >
+        <a href="/videos/best-of-giant-bomb-93-cinematic-view/2300-11028/">
+          <div class="img editorial-img imgflare video">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/0/31/2832075-viauwri.jpg" alt="Best of Giant Bomb 93 - Cinematic View">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 36</i>
+                          </div>
+          </div>
+
+          <h3 class="editorial-title">Best of Giant Bomb 93 - Cinematic View</h3>
+          
+           <p class="editorial-byline">
+            by
+            Derek&nbsp;Stone | Mar. 5 6:00am </p>
+
+          <p class="editorial-excerpt">
+            Giant Bomb is mastering the art of stealth, 25 cents at a time.
+          </p>
+        </a>
+      </li>
+        
+                    <li >
+        <a href="/videos/quick-look-black-desert-online/2300-11013/">
+          <div class="img editorial-img imgflare video">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/2/23546/2831882-ls.jpg" alt="Quick Look: Black Desert Online">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 278</i>
+                          </div>
+          </div>
+
+          <h3 class="editorial-title">Quick Look: Black Desert Online</h3>
+          
+           <p class="editorial-byline">
+            by
+            Drew&nbsp;Scanlon | Mar. 5 6:00am </p>
+
+          <p class="editorial-excerpt">
+            Character creators have come a long way. MMOs, on the other hand...
+          </p>
+        </a>
+      </li>
+        
+                              <li class="content--premium">
+        <a href="/videos/unprofessional-fridays-03042016/2300-11029/">
+          <div class="img editorial-img imgflare video">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/2/23546/2832080-vs.jpg" alt="Unprofessional Fridays: 03/04/2016">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 101</i>
+                                                <i class="icon icon-play premium-tag"> Premium</i>
+                                          </div>
+          </div>
+
+          <h3 class="editorial-title">Unprofessional Fridays: 03/04/2016</h3>
+          
+           <p class="editorial-byline">
+            by
+            Drew&nbsp;Scanlon | Mar. 4 6:00pm </p>
+
+          <p class="editorial-excerpt">
+            Marlon Brando joins us on the couch for zombie pilots, jamming, geometry, and omnipotent robots.
+          </p>
+        </a>
+      </li>
+        
+                              <li class="content--premium">
+        <a href="/videos/vinnyvania-rondo-of-blood-part-01/2300-11024/">
+          <div class="img editorial-img imgflare video">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/0/31/2832064-cp_vinnyvaniarondo_03042016.00_08_29_36.still001.jpg" alt="VinnyVania: Rondo of Blood - Part 01">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 118</i>
+                                                <i class="icon icon-play premium-tag"> Premium</i>
+                                          </div>
+          </div>
+
+          <h3 class="editorial-title">VinnyVania: Rondo of Blood - Part 01</h3>
+          
+           <p class="editorial-byline">
+            by
+            Vinny&nbsp;Caravella | Mar. 4 3:47pm </p>
+
+          <p class="editorial-excerpt">
+            We&#039;re back and ready to fight Dracula... again, but this time with a fantastic backing track!
+          </p>
+        </a>
+      </li>
+        
+                    <li >
+        <a href="/podcasts/giant-bomb-presents-introducing-gita-jackson/1600-1526/">
+          <div class="img editorial-img imgflare podcast">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/28/281548/2832049-screen+shot+2016-03-04+at+4.44.30+pm.png" alt="Giant Bomb Presents: Introducing Gita Jackson">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 29</i>
+                          </div>
+          </div>
+
+          <h3 class="editorial-title">Giant Bomb Presents: Introducing Gita Jackson</h3>
+          
+           <p class="editorial-byline">
+            by
+            Austin&nbsp;Walker | Mar. 4 1:46pm </p>
+
+          <p class="editorial-excerpt">
+            Former Beastcast guest (and new Giant Bomb guest contributor) Gita Jackson joins Austin to chat about Dwarf Fortress, fantasy novels, and the best hypothetical CW show ever.
+          </p>
+        </a>
+      </li>
+        
+                    <li >
+        <a href="/articles/guest-column-digging-a-little-deeper-dwarf-fortres/1100-5408/">
+          <div class="img editorial-img imgflare article">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/28/281548/2832042-7263634719-ZGZM4.jpg" alt="Guest Column: Digging a Little Deeper: Dwarf Fortress, Fantasy Tropes, and World Building">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 80</i>
+                          </div>
+          </div>
+
+          <h3 class="editorial-title">Guest Column: Digging a Little Deeper: Dwarf Fortress, Fantasy Tropes, and World Building</h3>
+          
+           <p class="editorial-byline">
+            by
+            Gita&nbsp;Jackson | Mar. 4 1:45pm </p>
+
+          <p class="editorial-excerpt">
+            Guest contributor Gita Jackson explains how Dwarf Fortress&#039; ability to let you tell your own stories helped her overcome her usual disinterest in Tolkien-esque fantasy.
+          </p>
+        </a>
+      </li>
+        
+                    <li >
+        <a href="/podcasts/8-4-play-342016-fur-and-loathing/1600-1527/">
+          <div class="img editorial-img imgflare podcast">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/0/30/2832014-8490566765-xIk2g7W.png+" alt="8-4 Play 3/4/2016: FUR AND LOATHING">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 10</i>
+                          </div>
+          </div>
+
+          <h3 class="editorial-title">8-4 Play 3/4/2016: FUR AND LOATHING</h3>
+          
+           <p class="editorial-byline">
+            by
+            Brad&nbsp;Shoemaker | Mar. 4 10:30am </p>
+
+          <p class="editorial-excerpt">
+            Nintendo Direct, Street Fighter V, Firewatch, The Division, Mario &amp; Luigi: Paper Jam, Nuzlocke rules, Xbox&#039;s new direction, Young Conker, and more!
+          </p>
+        </a>
+      </li>
+        
+                    <li >
+        <a href="/videos/quick-look-ultimate-chicken-horse/2300-11022/">
+          <div class="img editorial-img imgflare video">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/0/31/2831896-cp_ultimatechickenhorse_ql.00_19_06_03.still002.jpg" alt="Quick Look: Ultimate Chicken Horse">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 56</i>
+                          </div>
+          </div>
+
+          <h3 class="editorial-title">Quick Look: Ultimate Chicken Horse</h3>
+          
+           <p class="editorial-byline">
+            by
+            Vinny&nbsp;Caravella | Mar. 4 9:00am </p>
+
+          <p class="editorial-excerpt">
+            We&#039;ve got four controllers, four people, and hundreds of ways to make evil and terrible level design decisions.
+          </p>
+        </a>
+      </li>
+        
+                    <li >
+        <a href="/podcasts/the-giant-beastcast-episode-41/1600-1524/">
+          <div class="img editorial-img imgflare podcast">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/0/31/2831899-5307359044-noman.jpg" alt="The Giant Beastcast - Episode 41">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 98</i>
+                          </div>
+          </div>
+
+          <h3 class="editorial-title">The Giant Beastcast - Episode 41</h3>
+          
+           <p class="editorial-byline">
+            by
+            Vinny&nbsp;Caravella | Mar. 4 3:00am </p>
+
+          <p class="editorial-excerpt">
+            We get the scoop on No Man&#039;s Sky and Quantum Break, discuss how Factorio can ruin lives, spin up the speculation machine with Microsoft&#039;s latest announcements, and continue our hot Chameleon coverage.
+          </p>
+        </a>
+      </li>
+        
+                    <li >
+        <a href="/videos/game-tapes-raw-ea-majestic-electronic-press-kit-07/2300-11020/">
+          <div class="img editorial-img imgflare video">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/2/23546/2831893-rs.jpg" alt="Game Tapes Raw: EA Majestic Electronic Press Kit (07/20/2001)">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 20</i>
+                          </div>
+          </div>
+
+          <h3 class="editorial-title">Game Tapes Raw: EA Majestic Electronic Press Kit (07/20/2001)</h3>
+          
+           <p class="editorial-byline">
+            by
+            Drew&nbsp;Scanlon | Mar. 3 4:07pm </p>
+
+          <p class="editorial-excerpt">
+            How do you get B-roll of Majestic? By filming a computer screen, of course.
+          </p>
+        </a>
+      </li>
+        
+                    <li >
+        <a href="/videos/game-tapes-raw-xbox-bill-gatesthe-rock-01062001/2300-11015/">
+          <div class="img editorial-img imgflare video">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/2/23546/2831888-ns.jpg" alt="Game Tapes Raw: Xbox - Bill Gates/The Rock (01/06/2001)">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 24</i>
+                          </div>
+          </div>
+
+          <h3 class="editorial-title">Game Tapes Raw: Xbox - Bill Gates/The Rock (01/06/2001)</h3>
+          
+           <p class="editorial-byline">
+            by
+            Drew&nbsp;Scanlon | Mar. 3 4:01pm </p>
+
+          <p class="editorial-excerpt">
+            Two showmen extol the virtues of the Microsoft Xbox and each other.
+          </p>
+        </a>
+      </li>
+        
+                    <li >
+        <a href="/videos/game-tapes-raw-microsoft-xbox-introduction-0920200/2300-11014/">
+          <div class="img editorial-img imgflare video">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/2/23546/2831885-ms.jpg" alt="Game Tapes Raw: Microsoft Xbox Introduction (09/20/2000)">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 26</i>
+                          </div>
+          </div>
+
+          <h3 class="editorial-title">Game Tapes Raw: Microsoft Xbox Introduction (09/20/2000)</h3>
+          
+           <p class="editorial-byline">
+            by
+            Drew&nbsp;Scanlon | Mar. 3 4:00pm </p>
+
+          <p class="editorial-excerpt">
+            Industry executives talk up the Xbox. Also: gameplay target renders, chest bumps.
+          </p>
+        </a>
+      </li>
+        
+                    <li >
+        <a href="/articles/thirty-minutes-with-no-mans-sky/1100-5407/">
+          <div class="img editorial-img imgflare article">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/0/30/2831592-walkers.jpg" alt="Thirty Minutes With No Man&#039;s Sky">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 159</i>
+                          </div>
+          </div>
+
+          <h3 class="editorial-title">Thirty Minutes With No Man&#039;s Sky</h3>
+          
+           <p class="editorial-byline">
+            by
+            Brad&nbsp;Shoemaker | Mar. 3 8:00am </p>
+
+          <p class="editorial-excerpt">
+            A hands-on report with Hello Games&#039; enormous sci-fi galaxy or Jared Leto&#039;s next musical side project? You decide.
+          </p>
+        </a>
+      </li>
+        
+                    <li >
+        <a href="/videos/four-questions-about-no-mans-sky/2300-11012/">
+          <div class="img editorial-img imgflare video">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/2/23546/2831591-js.jpg" alt="Four Questions About No Man&#039;s Sky">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 127</i>
+                          </div>
+          </div>
+
+          <h3 class="editorial-title">Four Questions About No Man&#039;s Sky</h3>
+          
+           <p class="editorial-byline">
+            by
+            Brad&nbsp;Shoemaker | Mar. 3 8:00am </p>
+
+          <p class="editorial-excerpt">
+            Brad got exactly 10 minutes to chat with Sean Murray of Hello Games (and six minutes of footage to go with it). Here&#039;s that conversation!
+          </p>
+        </a>
+      </li>
+        
+                    <li >
+        <a href="/videos/quick-look-arcade-archives-round-07/2300-11009/">
+          <div class="img editorial-img imgflare video">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/2/23546/2831496-gs.jpg" alt="Quick Look: Arcade Archives: Round 07">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 72</i>
+                          </div>
+          </div>
+
+          <h3 class="editorial-title">Quick Look: Arcade Archives: Round 07</h3>
+          
+           <p class="editorial-byline">
+            by
+            Drew&nbsp;Scanlon | Mar. 3 6:00am </p>
+
+          <p class="editorial-excerpt">
+            Who&#039;s shoveling cops and watching the rawest arcade game intro of all time? Just a couple of booby kids.
+          </p>
+        </a>
+      </li>
+        
+                              <li class="content--premium">
+        <a href="/videos/game-tapes-01-the-majestic-xbox/2300-11008/">
+          <div class="img editorial-img imgflare video">
+                          <img src="http://static.giantbomb.com/uploads/screen_small/2/23546/2831466-fs.jpg" alt="Game Tapes 01: The Majestic Xbox">
+                        <div class="editorial-stats">
+              <i class="icon icon-comments"> 282</i>
+                                                <i class="icon icon-play premium-tag"> Premium</i>
+                                          </div>
+          </div>
+
+          <h3 class="editorial-title">Game Tapes 01: The Majestic Xbox</h3>
+          
+           <p class="editorial-byline">
+            by
+            Drew&nbsp;Scanlon | Mar. 2 9:00pm </p>
+
+          <p class="editorial-excerpt">
+            We grab a bunch of dusty tapes off a shelf and pop them into a VCR. What surprises await?
+          </p>
+        </a>
+      </li>
+        
+      </ul>
+
+            <div class="show-more js-load-forever" data-show-more-type="recent" data-max-page="6">
+        <a href="#" data-click-track-id="river-show-more"  class="show-more-link"><i class="icon icon-plus"></i>Show me more</a>
+      </div>
+      </section>
+
+    <div class="js-taboola-module" data-taboola-parameters="{&quot;mode&quot;:&quot;thumbnails-a&quot;,&quot;container&quot;:&quot;taboola-bottom-page-thumbnails&quot;,&quot;placement&quot;:&quot;homepage Bottom Page Thumbnails&quot;,&quot;target_type&quot;:&quot;mix&quot;}"></div>
+
+                                          </div>
+      <aside class="secondary-content span4 ">
+                              <div id="mpu_top-wrap" class="js-mapped-ad mapped-ad mapped-mpu_top mapped-mpu_top-dart" ><div id="mpu_top" class="ad-wrap ad-wrap-mpu_top"></div></div>                                    
+  <dl class="promo-upcoming">
+
+    <dt>Coming up on Giant Bomb</dt>
+
+                                          <dd style="background-image:url(http://static.giantbomb.com/uploads/screen_medium/23/233047/2832646-upf311.jpg)"  class="content--premium">
+        <div>
+          <h4 class="title">Unprofessional Fridays: 03/11/2016</h4>
+          <p class="time"><span class="premium-tag"><i class="icon icon-star"></i> Premium</span> Live Show on Mar 11, 2016 07:00 PM</p>
+        </div>
+      </dd>
+                
+              
+
+  </dl>
+
+
+    
+
+
+<dl class="premium-content"><dt>Giant Bomb Premium <span>Unlock a world of imagination</span></dt><dd class="premium-content__video"><a href="/upgrade/"><img src="http://static.giantbomb.com/bundles/phoenixsite/images/core//loose/tmp-gb-upsell.png" alt="GiantBomb Premium Upsell Video" /></a></dd></dl><div class="premium-listing listing-pod"><ul class="editorial"><li class="content--premium"><div><h4 class="title"><a href="/upgrade/">
+		        		        The Powerbombcast Episode 21 - The Slap Heard &#039;Round the World
+		        </a></h4><p class="time">Podcast on Mar 08, 2016 05:00 PM</p></div></li><li class="content--premium"><div><h4 class="title"><a href="/upgrade/">
+		        		        Giant Bombcast 03/08/2016 (Premium)
+		        </a></h4><p class="time">Podcast on Mar 08, 2016 03:25 PM</p></div></li><li class="content--premium"><div><h4 class="title"><a href="/upgrade/">
+		        		        Unprofessional Fridays: 03/04/2016
+		        </a></h4><p class="time">Video on Mar 04, 2016 10:00 PM</p></div></li></ul></div>
+      
+  <!-- GiantbombSiteBundle:Default:recentGames|N|16:39:07 --><h4 class="header-borders">
+  <a href="/new-games/">
+    Top Releases
+     <span>Mar.01 -  Mar.15</span>
+  </a>
+</h4>
+
+      <dl class="spotlight-release">
+      <dt class="img">
+                  <a href="/tom-clancy-s-the-division/3030-42918/" class="imgcast imgboxart"><img src="http://static.giantbomb.com/uploads/scale_tiny/9/95676/2643697-91pvshkpjfl._sl1500_+-+copy.jpg" /></a>
+              </dt>
+
+      <dd>
+        <a href="/tom-clancy-s-the-division/3030-42918/" class="title">Tom Clancy&#039;s The Division</a>
+
+                <a href="/tom-clancy-s-the-division/3030-42918/forums/"><i class="icon icon-comments-alt"></i> Forum Posts <span>(1258)</span></a>
+
+                
+                          <a href="/videos/e3-2013-it-s-going-to-be-a-dark-winter-in-the-divi/2300-7508/"><i class="icon icon-play"></i> Trailers</a>
+        
+                        <a href="/profile/bigjeffrey/" class="tipsy user" title="Top Contributor: bigjeffrey" >
+          <img src="http://static.giantbomb.com/uploads/square_mini/0/1992/2825199-screen+shot+2016-02-11+at+9.59.44+pm.png" />
+        </a>
+        
+                <a href="/tom-clancy-s-the-division/3030-42918/">
+          <i class="icon icon-edit"></i> Wiki Page
+        </a>
+
+      </dd>
+    </dl>
+      <dl class="spotlight-release">
+      <dt class="img">
+                  <a href="/hitman/3030-45150/" class="imgcast imgboxart"><img src="http://static.giantbomb.com/uploads/scale_tiny/0/176/2759205-pack-large.jpg" /></a>
+              </dt>
+
+      <dd>
+        <a href="/hitman/3030-45150/" class="title">Hitman</a>
+
+                <a href="/hitman/3030-45150/forums/"><i class="icon icon-comments-alt"></i> Forum Posts <span>(183)</span></a>
+
+                
+                          <a href="/videos/e3-2015-this-hitman-trailer-s-got-styyyyyyyyyle/2300-10322/"><i class="icon icon-play"></i> Trailers</a>
+        
+                        <a href="/profile/yummylee/" class="tipsy user" title="Top Contributor: yummylee" >
+          <img src="http://static.giantbomb.com/uploads/square_mini/1/10354/2713441-2497642-2400997-barrycartoon+%281%29.jpg" />
+        </a>
+        
+                <a href="/hitman/3030-45150/">
+          <i class="icon icon-edit"></i> Wiki Page
+        </a>
+
+      </dd>
+    </dl>
+      <dl class="spotlight-release">
+      <dt class="img">
+                  <a href="/the-legend-of-zelda-twilight-princess-hd/3030-51484/" class="imgcast imgboxart"><img src="http://static.giantbomb.com/uploads/scale_tiny/8/82063/2815404-tphd.jpg" /></a>
+              </dt>
+
+      <dd>
+        <a href="/the-legend-of-zelda-twilight-princess-hd/3030-51484/" class="title">The Legend of Zelda: Twilight Princess HD</a>
+
+                <a href="/the-legend-of-zelda-twilight-princess-hd/3030-51484/forums/"><i class="icon icon-comments-alt"></i> Forum Posts <span>(105)</span></a>
+
+                
+                          <a href="/videos/quick-look-the-legend-of-zelda-twilight-princess-h/2300-11003/"><i class="icon icon-play"></i> Quick Looks</a>
+        
+                        <a href="/profile/def/" class="tipsy user" title="Top Contributor: def" >
+          <img src="http://static.giantbomb.com/uploads/square_mini/8/82063/2731881-terrava.jpg" />
+        </a>
+        
+                <a href="/the-legend-of-zelda-twilight-princess-hd/3030-51484/">
+          <i class="icon icon-edit"></i> Wiki Page
+        </a>
+
+      </dd>
+    </dl>
+      <dl class="spotlight-release">
+      <dt class="img">
+                  <a href="/blast-em-bunnies/3030-44126/" class="imgcast imgboxart"><img src="http://static.giantbomb.com/uploads/scale_tiny/14/149021/2554923-2761450757-Splas.png" /></a>
+              </dt>
+
+      <dd>
+        <a href="/blast-em-bunnies/3030-44126/" class="title">Blast &#039;Em Bunnies</a>
+
+                <a href="/blast-em-bunnies/3030-44126/forums/"><i class="icon icon-comments-alt"></i> Forum Posts <span>(0)</span></a>
+
+                
+                          <a href="/videos/e3-2015-from-the-makers-of-mynotebook-carbon-this-/2300-10420/"><i class="icon icon-play"></i> Trailers</a>
+        
+                        <a href="/profile/blacklagoon/" class="tipsy user" title="Top Contributor: blacklagoon" >
+          <img src="http://static.giantbomb.com/uploads/square_mini/14/149021/2127402-val.png" />
+        </a>
+        
+                <a href="/blast-em-bunnies/3030-44126/">
+          <i class="icon icon-edit"></i> Wiki Page
+        </a>
+
+      </dd>
+    </dl>
+      <dl class="spotlight-release">
+      <dt class="img">
+                  <a href="/chasing-dead/3030-52705/" class="imgcast imgboxart"><img src="http://static.giantbomb.com/uploads/scale_tiny/8/82063/2827327-1653705200-chasi.jpg" /></a>
+              </dt>
+
+      <dd>
+        <a href="/chasing-dead/3030-52705/" class="title">Chasing Dead</a>
+
+                <a href="/chasing-dead/3030-52705/forums/"><i class="icon icon-comments-alt"></i> Forum Posts <span>(0)</span></a>
+
+                
+                
+                        <a href="/profile/bobafettjm/" class="tipsy user" title="Top Contributor: bobafettjm" >
+          <img src="http://static.giantbomb.com/uploads/square_mini/10/103881/2208701-2208699-avatar_body.png" />
+        </a>
+        
+                <a href="/chasing-dead/3030-52705/">
+          <i class="icon icon-edit"></i> Wiki Page
+        </a>
+
+      </dd>
+    </dl>
+  <!-- /GiantbombSiteBundle:Default:recentGames -->
+
+    <!-- PhoenixSiteBundle:FrontDoor:twitterListBox|N|16:34:21 -->
+<div class="promo-twitter-feed">
+
+  <h4 class="header-borders"><i class="icon icon-twitter"></i> Giant Bomb Staff Tweets</h4>
+
+  <ul class="editorial">
+            <li>
+
+                        <div class="img"><img src="http://pbs.twimg.com/profile_images/591369689386901504/CJLTLXvp_normal.jpg" alt="" /></div>
+        
+        <p class="author">
+          <a href="/profile/austin_walker/">austin_walker</a>
+          <a href="http://twitter.com/austin_walker" class="twitter-author">@austin_walker</a>
+        </p>
+
+        <p>Was just thinking that like, a year ago today, I was probably thinking about how nice it would be if there was a random GB live stream.</p>
+
+        <p class="time">
+          15 minutes ago
+        </p>
+
+     </li>
+          <li>
+
+                        <div class="img"><img src="http://pbs.twimg.com/profile_images/591369689386901504/CJLTLXvp_normal.jpg" alt="" /></div>
+        
+        <p class="author">
+          <a href="/profile/austin_walker/">austin_walker</a>
+          <a href="http://twitter.com/austin_walker" class="twitter-author">@austin_walker</a>
+        </p>
+
+        <p>I hear there's a @Giantbomb Division Live Stream going on over here: <a href="https://t.co/Hw6dJe1ATb" rel="nofollow">https://t.co/Hw6dJe1ATb</a></p>
+
+        <p class="time">
+          1 hour ago
+        </p>
+
+     </li>
+          <li>
+
+                        <div class="img"><img src="http://pbs.twimg.com/profile_images/632365108446957572/lmb6H8Xy_normal.jpg" alt="" /></div>
+        
+        <p class="author">
+          <a href="/profile/jeff/">jeff</a>
+          <a href="http://twitter.com/jeffgerstmann" class="twitter-author">@jeffgerstmann</a>
+        </p>
+
+        <p>We're going to try out The Division live over here. Starting in about 10? <a href="https://t.co/nykahwlK1G" rel="nofollow">https://t.co/nykahwlK1G</a></p>
+
+        <p class="time">
+          2 hours ago
+        </p>
+
+     </li>
+          <li>
+
+                        <div class="img"><img src="http://pbs.twimg.com/profile_images/1899034972/432097_3571596614563_1412456588_3435196_1316319311_n_normal.jpg" alt="" /></div>
+        
+        <p class="author">
+          <a href="/profile/unastrike/">unastrike</a>
+          <a href="http://twitter.com/unastrike" class="twitter-author">@unastrike</a>
+        </p>
+
+        <p>I think I would be... really OK with a League of Legends fighting game.</p>
+
+        <p class="time">
+          3 hours ago
+        </p>
+
+     </li>
+          <li>
+
+                        <div class="img"><img src="http://pbs.twimg.com/profile_images/632365108446957572/lmb6H8Xy_normal.jpg" alt="" /></div>
+        
+        <p class="author">
+          <a href="/profile/jeff/">jeff</a>
+          <a href="http://twitter.com/jeffgerstmann" class="twitter-author">@jeffgerstmann</a>
+        </p>
+
+        <p>This week’s Giant Bombcast (which is a podcast about video games) is now available. <a href="https://t.co/zURyyd1kjQ" rel="nofollow">https://t.co/zURyyd1kjQ</a></p>
+
+        <p class="time">
+          3 hours ago
+        </p>
+
+     </li>
+      
+  </ul>
+
+</div>
+<!-- /PhoenixSiteBundle:FrontDoor:twitterListBox -->
+                                  <div id="mpu_bottom-wrap" class="js-mapped-ad mapped-ad mapped-mpu_bottom mapped-mpu_bottom-dart" ><div id="mpu_bottom" class="ad-wrap ad-wrap-mpu_bottom"></div></div>          
+        <div class="js-taboola-module" data-taboola-parameters="{&quot;mode&quot;:&quot;thumbnails-rr&quot;,&quot;container&quot;:&quot;taboola-right-rail-thumbnails&quot;,&quot;placement&quot;:&quot;homepage Right Rail Thumbnails&quot;,&quot;target_type&quot;:&quot;mix&quot;}"></div>
+                </aside>
+          <!-- PhoenixSiteBundle:FrontDoor:frontDoorCommunityShowcase|N|16:39:07 --><div class="container row below-content">
+    <dl class="feed-hdr">
+      <dt><a href="/community/"><i class="icon icon-chevron-left"></i><i class="icon icon-chevron-right"></i> User Community Showcase</a></dt>
+      <dd><a href="/community/">View All</a></dd>
+    </dl>
+    <ul class="editorial grid  sixths ">
+      <li>
+      <a href="http://www.giantbomb.com/fire-emblem-fates/3030-48580/forums/share-your-castle-code-1792858/">
+        <div class="img imgflare"><img src="http://static.giantbomb.com/uploads/screen_small/0/1992/2830583-fe14mycastle.jpg"></div>
+        <h3 class="title">Castle Codes</h3>
+        <p class="deck">Fire Emblem Fates offers a lot of unlockable goodies for visiting other people&#039;s castles as well as battling their squads. So, whichever version you&#039;re playing, come share your code!</p>
+      </a>
+    </li>
+      <li>
+      <a href="http://www.giantbomb.com/profile/clagnaught/blog/best-of-giant-bombs-persona-4-endurance-run-01-par/112724/">
+        <div class="img imgflare"><img src="http://static.giantbomb.com/uploads/screen_small/0/3454/2769101-2013-07-04-213739.jpg"></div>
+        <h3 class="title">Best of P4 ER</h3>
+        <p class="deck">After seven years, Clagnaught is finally tackling the Persona 4 Endurance Run and is creating &quot;Best of&quot; videos along the way!</p>
+      </a>
+    </li>
+      <li>
+      <a href="http://www.giantbomb.com/profile/dankempster/blog/its-not-you-its-me-the-great-video-game-break-up/112628/">
+        <div class="img imgflare"><img src="http://static.giantbomb.com/uploads/screen_small/8/86760/1830184-half_minute_hero_super_mega_neo_climax_xbox_360_1308140579_042.jpg"></div>
+        <h3 class="title">It&#039;s Not You, It&#039;s Me</h3>
+        <p class="deck">dankempster has taken a long, hard look at his video game Pile of Shame and accepted there&#039;s certain entries on the list he will just never play.</p>
+      </a>
+    </li>
+      <li>
+      <a href="http://www.giantbomb.com/forums/general-discussion-30/as-promised-here-is-my-interview-w-giantbombs-own--1792598/">
+        <div class="img imgflare"><img src="http://static.giantbomb.com/uploads/screen_small/0/1992/2830582-2828485-3314875965-cakearzuuaakrff+%281%29.png"></div>
+        <h3 class="title">What They Play Ep.4</h3>
+        <p class="deck">vegetashonor is back with another video interview and this time it&#039;s with Giant Bomb&#039;s own Austin Walker. He&#039;s even included some user submitted questions.</p>
+      </a>
+    </li>
+      <li>
+      <a href="http://www.giantbomb.com/street-fighter-v/3030-48320/forums/street-fighter-v-fighter-id-thread-1792268/">
+        <div class="img imgflare"><img src="http://static.giantbomb.com/uploads/screen_small/3/32132/2777044-11916086_10153670068637147_2919955854749490725_n.jpg"></div>
+        <h3 class="title">SFV Fighter IDs</h3>
+        <p class="deck">If you&#039;re looking for some new opponents in Street Fighter V or just want to watch some replays, get in here and share your Fighter ID.</p>
+      </a>
+    </li>
+      <li>
+      <a href="http://www.giantbomb.com/forums/general-discussion-30/nostalgia-and-the-medium-of-gaming-1791646/">
+        <div class="img imgflare"><img src="http://static.giantbomb.com/uploads/screen_small/0/4086/199497-ffviifire.jpg"></div>
+        <h3 class="title">Nostalgic Power</h3>
+        <p class="deck">Kamui has written an introspective forum post regarding the power of nostalgia as it pertains to the games we love.</p>
+      </a>
+    </li>
+  </ul>
+</div>
+<!-- /PhoenixSiteBundle:FrontDoor:frontDoorCommunityShowcase -->
+
+  
+    <!-- PhoenixSiteBundle:FrontDoor:frontDoorRecentTopics|N|16:34:18 -->		<div id="forums" class="row below-content">
+		<h4 class="header-borders"><a href="/forums/">Recent Forum Activity</a></h4>
+		<table class="table table-striped table-bordered table-forums">
+  <thead>
+    <tr>
+        <th class="img hide-mobile"></th>
+        <th>Topic (» jump to last post)</th>
+        <th class="author hide-mobile">Author</th>
+        <th class="last-post hide-mobile">Last Post</th>
+        <th class="views">Posts</th>
+        <th class="views hide-mobile">Views</th>
+    </tr>
+  </thead>
+  <tbody>
+                                                                                                        <tr>
+  <td class="hide-mobile cell-min">
+          <a href="/profile/jedted/" class="avatar img">
+        <img src="http://static.giantbomb.com/uploads/square_mini/1/14979/2532642-tomshep%28liberty-avatar%29.jpg" />
+      </a>
+      </td>
+  <td>
+    <div>
+                        
+      
+      <a href="/forums/off-topic-31/fuller-house-discussion-1793354/#22" class="topic-name " data-original-title="">
+        Fuller House Discussion
+      </a>
+
+      <a href="/forums/off-topic-31/fuller-house-discussion-1793354/?page=1#js-message-22" class="last">&raquo;</a>
+
+                          
+    </div>
+    <a href="/forums/off-topic-31/" class="board">Off-Topic</a>
+  </td>
+  <td class="author hide-mobile">
+    <div>
+      <a href="/profile/jedted/" class=" pc ">
+        Jedted
+      </a>
+    </div>
+    <span class="info">Mar 08, 2016</span>
+  </td>
+  <td class="last-post hide-mobile">
+    <div>
+      <a href="/profile/beforet/"class=" neutral  ">
+        Beforet
+      </a>
+    </div>
+    <span class="info">1 minute ago <a href="/forums/off-topic-31/fuller-house-discussion-1793354/?page=1#js-message-22" class="last">&raquo;</a></span>
+  </td>
+<td class="js-posts views"><meta data-post-render-param="ForumBundle.mode" data-post-render-value="topic-list"/><meta class="js-post-render-topic" data-post-render-param="ForumBundle.topicId[]" data-post-render-value="1793354" data-full-message-count="22" data-base-url="/forums/off-topic-31/fuller-house-discussion-1793354/" />22</td>  <td class="views hide-mobile">
+    408
+  </td>
+</tr>
+                                                    <tr>
+  <td class="hide-mobile cell-min">
+          <a href="/profile/mub/" class="avatar img">
+        <img src="http://static.giantbomb.com/uploads/square_mini/19/192016/2686801-2014-01-18_20-41-30.jpg" />
+      </a>
+      </td>
+  <td>
+    <div>
+                        
+      
+      <a href="/tom-clancy-s-the-division/3030-42918/forums/30-day-xbox-one-exclusivity-for-expansions-1793301/#25" class="topic-name " data-original-title="">
+        30 Day Xbox One Exclusivity For Expansions
+      </a>
+
+      <a href="/tom-clancy-s-the-division/3030-42918/forums/30-day-xbox-one-exclusivity-for-expansions-1793301/?page=1#js-message-25" class="last">&raquo;</a>
+
+                          
+    </div>
+    <a href="/tom-clancy-s-the-division/3030-42918/forums/" class="board">Tom Clancy&#039;s The Division</a>
+  </td>
+  <td class="author hide-mobile">
+    <div>
+      <a href="/profile/mub/" class=" neutral ">
+        Mub
+      </a>
+    </div>
+    <span class="info">Mar 07, 2016</span>
+  </td>
+  <td class="last-post hide-mobile">
+    <div>
+      <a href="/profile/thepanzini/"class=" neutral  ">
+        ThePanzini
+      </a>
+    </div>
+    <span class="info">4 minutes ago <a href="/tom-clancy-s-the-division/3030-42918/forums/30-day-xbox-one-exclusivity-for-expansions-1793301/?page=1#js-message-25" class="last">&raquo;</a></span>
+  </td>
+<td class="js-posts views"><meta data-post-render-param="ForumBundle.mode" data-post-render-value="topic-list"/><meta class="js-post-render-topic" data-post-render-param="ForumBundle.topicId[]" data-post-render-value="1793301" data-full-message-count="25" data-base-url="/tom-clancy-s-the-division/3030-42918/forums/30-day-xbox-one-exclusivity-for-expansions-1793301/" />25</td>  <td class="views hide-mobile">
+    566
+  </td>
+</tr>
+                                                    <tr>
+  <td class="hide-mobile cell-min">
+          <a href="/profile/bdead/" class="avatar img">
+        <img src="http://static.giantbomb.com/uploads/square_mini/0/22/176637-default.png" />
+      </a>
+      </td>
+  <td>
+    <div>
+                        
+      
+      <a href="/pc/3045-94/forums/do-you-4k-1793342/#22" class="topic-name " data-original-title="">
+        Do you 4K?
+      </a>
+
+      <a href="/pc/3045-94/forums/do-you-4k-1793342/?page=1#js-message-22" class="last">&raquo;</a>
+
+                          
+    </div>
+    <a href="/pc/3045-94/forums/" class="board">PC</a>
+  </td>
+  <td class="author hide-mobile">
+    <div>
+      <a href="/profile/bdead/" class=" microsoft ">
+        Bdead
+      </a>
+    </div>
+    <span class="info">Mar 08, 2016</span>
+  </td>
+  <td class="last-post hide-mobile">
+    <div>
+      <a href="/profile/oursin_360/"class=" neutral  ">
+        OurSin_360
+      </a>
+    </div>
+    <span class="info">6 minutes ago <a href="/pc/3045-94/forums/do-you-4k-1793342/?page=1#js-message-22" class="last">&raquo;</a></span>
+  </td>
+<td class="js-posts views"><meta data-post-render-param="ForumBundle.mode" data-post-render-value="topic-list"/><meta class="js-post-render-topic" data-post-render-param="ForumBundle.topicId[]" data-post-render-value="1793342" data-full-message-count="22" data-base-url="/pc/3045-94/forums/do-you-4k-1793342/" />22</td>  <td class="views hide-mobile">
+    339
+  </td>
+</tr>
+                                                    <tr>
+  <td class="hide-mobile cell-min">
+          <a href="/profile/kalal/" class="avatar img">
+        <img src="http://static.giantbomb.com/uploads/square_mini/7/77993/1251551-4108024907_30e9c4f65b_o.jpg" />
+      </a>
+      </td>
+  <td>
+    <div>
+                        
+      
+      <a href="/forums/general-discussion-30/looking-for-a-master-list-of-flight-club-videos-555524/#10" class="topic-name " data-original-title="">
+        Looking for a &quot;master list&quot; of Flight Club videos
+      </a>
+
+      <a href="/forums/general-discussion-30/looking-for-a-master-list-of-flight-club-videos-555524/?page=1#js-message-10" class="last">&raquo;</a>
+
+                          
+    </div>
+    <a href="/forums/general-discussion-30/" class="board">General Discussion</a>
+  </td>
+  <td class="author hide-mobile">
+    <div>
+      <a href="/profile/kalal/" class=" neutral ">
+        KalAl
+      </a>
+    </div>
+    <span class="info">Jul 29, 2012</span>
+  </td>
+  <td class="last-post hide-mobile">
+    <div>
+      <a href="/profile/toowalrus/"class=" neutral  ">
+        TooWalrus
+      </a>
+    </div>
+    <span class="info">7 minutes ago <a href="/forums/general-discussion-30/looking-for-a-master-list-of-flight-club-videos-555524/?page=1#js-message-10" class="last">&raquo;</a></span>
+  </td>
+<td class="js-posts views"><meta data-post-render-param="ForumBundle.mode" data-post-render-value="topic-list"/><meta class="js-post-render-topic" data-post-render-param="ForumBundle.topicId[]" data-post-render-value="555524" data-full-message-count="10" data-base-url="/forums/general-discussion-30/looking-for-a-master-list-of-flight-club-videos-555524/" />10</td>  <td class="views hide-mobile">
+    3,840
+  </td>
+</tr>
+                                                    <tr>
+  <td class="hide-mobile cell-min">
+          <a href="/profile/mister_v/" class="avatar img">
+        <img src="http://static.giantbomb.com/uploads/square_mini/13/137643/2775917-5497683843-21271.png" />
+      </a>
+      </td>
+  <td>
+    <div>
+                        
+      
+      <a href="/pc/3045-94/forums/nvidia-users-hold-off-on-latest-drivers-1793307/#54" class="topic-name " data-original-title="">
+        Nvidia users hold off on latest drivers!!
+      </a>
+
+      <a href="/pc/3045-94/forums/nvidia-users-hold-off-on-latest-drivers-1793307/?page=2#js-message-54" class="last">&raquo;</a>
+
+                          
+    </div>
+    <a href="/pc/3045-94/forums/" class="board">PC</a>
+  </td>
+  <td class="author hide-mobile">
+    <div>
+      <a href="/profile/mister_v/" class=" pc ">
+        Mister_V
+      </a>
+    </div>
+    <span class="info">Mar 07, 2016</span>
+  </td>
+  <td class="last-post hide-mobile">
+    <div>
+      <a href="/profile/mike/"class=" pc  ">
+        Mike
+      </a>
+    </div>
+    <span class="info">8 minutes ago <a href="/pc/3045-94/forums/nvidia-users-hold-off-on-latest-drivers-1793307/?page=2#js-message-54" class="last">&raquo;</a></span>
+  </td>
+<td class="js-posts views"><meta data-post-render-param="ForumBundle.mode" data-post-render-value="topic-list"/><meta class="js-post-render-topic" data-post-render-param="ForumBundle.topicId[]" data-post-render-value="1793307" data-full-message-count="54" data-base-url="/pc/3045-94/forums/nvidia-users-hold-off-on-latest-drivers-1793307/" />54</td>  <td class="views hide-mobile">
+    1,721
+  </td>
+</tr>
+                                                    <tr>
+  <td class="hide-mobile cell-min">
+          <a href="/profile/humanity/" class="avatar img">
+        <img src="http://static.giantbomb.com/uploads/square_mini/13/137381/1875980-title_humanity.jpg" />
+      </a>
+      </td>
+  <td>
+    <div>
+                        
+      
+      <a href="/tom-clancy-s-the-division/3030-42918/forums/the-division-first-impressions-1793334/#45" class="topic-name " data-original-title="">
+        The Division - First Impressions
+      </a>
+
+      <a href="/tom-clancy-s-the-division/3030-42918/forums/the-division-first-impressions-1793334/?page=1#js-message-46" class="last">&raquo;</a>
+
+                          
+    </div>
+    <a href="/tom-clancy-s-the-division/3030-42918/forums/" class="board">Tom Clancy&#039;s The Division</a>
+  </td>
+  <td class="author hide-mobile">
+    <div>
+      <a href="/profile/humanity/" class=" microsoft ">
+        Humanity
+      </a>
+    </div>
+    <span class="info">Mar 08, 2016</span>
+  </td>
+  <td class="last-post hide-mobile">
+    <div>
+      <a href="/profile/thatonedudenick/"class=" neutral  ">
+        ThatOneDudeNick
+      </a>
+    </div>
+    <span class="info">11 minutes ago <a href="/tom-clancy-s-the-division/3030-42918/forums/the-division-first-impressions-1793334/?page=1#js-message-46" class="last">&raquo;</a></span>
+  </td>
+<td class="js-posts views"><meta data-post-render-param="ForumBundle.mode" data-post-render-value="topic-list"/><meta class="js-post-render-topic" data-post-render-param="ForumBundle.topicId[]" data-post-render-value="1793334" data-full-message-count="46" data-base-url="/tom-clancy-s-the-division/3030-42918/forums/the-division-first-impressions-1793334/" />45</td>  <td class="views hide-mobile">
+    1,976
+  </td>
+</tr>
+                                                    <tr>
+  <td class="hide-mobile cell-min">
+          <a href="/profile/grulet/" class="avatar img">
+        <img src="http://static.giantbomb.com/uploads/square_mini/12/125688/2823707-psfirst-logo-new-746.png" />
+      </a>
+      </td>
+  <td>
+    <div>
+                        
+      
+      <a href="/batman-arkham-knight/3030-45577/forums/season-of-infamy-dlc-1788467/#19" class="topic-name " data-original-title="">
+        Season of Infamy - DLC
+      </a>
+
+      <a href="/batman-arkham-knight/3030-45577/forums/season-of-infamy-dlc-1788467/?page=1#js-message-19" class="last">&raquo;</a>
+
+                          
+    </div>
+    <a href="/batman-arkham-knight/3030-45577/forums/" class="board">Batman: Arkham Knight</a>
+  </td>
+  <td class="author hide-mobile">
+    <div>
+      <a href="/profile/grulet/" class=" neutral ">
+        Grulet
+      </a>
+    </div>
+    <span class="info">Dec 22, 2015</span>
+  </td>
+  <td class="last-post hide-mobile">
+    <div>
+      <a href="/profile/pompouspizza/"class=" neutral  ">
+        pompouspizza
+      </a>
+    </div>
+    <span class="info">12 minutes ago <a href="/batman-arkham-knight/3030-45577/forums/season-of-infamy-dlc-1788467/?page=1#js-message-19" class="last">&raquo;</a></span>
+  </td>
+<td class="js-posts views"><meta data-post-render-param="ForumBundle.mode" data-post-render-value="topic-list"/><meta class="js-post-render-topic" data-post-render-param="ForumBundle.topicId[]" data-post-render-value="1788467" data-full-message-count="19" data-base-url="/batman-arkham-knight/3030-45577/forums/season-of-infamy-dlc-1788467/" />19</td>  <td class="views hide-mobile">
+    759
+  </td>
+</tr>
+                                                    <tr>
+  <td class="hide-mobile cell-min">
+          <a href="/profile/borklund/" class="avatar img">
+        <img src="http://static.giantbomb.com/uploads/square_mini/15/153017/2617455-muppet_answering_phone2.jpg" />
+      </a>
+      </td>
+  <td>
+    <div>
+                                <img src="http://static.giantbomb.com/bundles/phoenixsite/images/core/sprites/icons/icn-pin-16x16.png">
+      
+      
+      <a href="/tom-clancy-s-the-division/3030-42918/forums/playstation-4-giant-bomb-division-community-thing-1791599/#72" class="topic-name " data-original-title="">
+        PlayStation 4 Giant Bomb Division Community... Thing
+      </a>
+
+      <a href="/tom-clancy-s-the-division/3030-42918/forums/playstation-4-giant-bomb-division-community-thing-1791599/?page=2#js-message-72" class="last">&raquo;</a>
+
+                          
+    </div>
+    <a href="/tom-clancy-s-the-division/3030-42918/forums/" class="board">Tom Clancy&#039;s The Division</a>
+  </td>
+  <td class="author hide-mobile">
+    <div>
+      <a href="/profile/borklund/" class=" microsoft ">
+        Borklund
+      </a>
+    </div>
+    <span class="info">Feb 04, 2016</span>
+  </td>
+  <td class="last-post hide-mobile">
+    <div>
+      <a href="/profile/logaan/"class=" neutral  ">
+        logaan
+      </a>
+    </div>
+    <span class="info">26 minutes ago <a href="/tom-clancy-s-the-division/3030-42918/forums/playstation-4-giant-bomb-division-community-thing-1791599/?page=2#js-message-72" class="last">&raquo;</a></span>
+  </td>
+<td class="js-posts views"><meta data-post-render-param="ForumBundle.mode" data-post-render-value="topic-list"/><meta class="js-post-render-topic" data-post-render-param="ForumBundle.topicId[]" data-post-render-value="1791599" data-full-message-count="72" data-base-url="/tom-clancy-s-the-division/3030-42918/forums/playstation-4-giant-bomb-division-community-thing-1791599/" />72</td>  <td class="views hide-mobile">
+    1,478
+  </td>
+</tr>
+                                                    <tr>
+  <td class="hide-mobile cell-min">
+          <a href="/profile/dannyodwyer/" class="avatar img">
+        <img src="http://static.giantbomb.com/uploads/square_mini/0/5610/2582187-me.jpeg" />
+      </a>
+      </td>
+  <td>
+    <div>
+                        
+      
+      <a href="/forums/off-topic-31/the-official-alt-f1-v6-thread-of-speed-1475408/#6886" class="topic-name " data-original-title="">
+        The Official Alt+F1 V6 Thread of Speed
+      </a>
+
+      <a href="/forums/off-topic-31/the-official-alt-f1-v6-thread-of-speed-1475408/?page=140#js-message-6971" class="last">&raquo;</a>
+
+                          
+    </div>
+    <a href="/forums/off-topic-31/" class="board">Off-Topic</a>
+  </td>
+  <td class="author hide-mobile">
+    <div>
+      <a href="/profile/dannyodwyer/" class=" neutral ">
+        dannyodwyer
+      </a>
+    </div>
+    <span class="info">Mar 15, 2014</span>
+  </td>
+  <td class="last-post hide-mobile">
+    <div>
+      <a href="/profile/dave_tacitus/"class=" pc  ">
+        Dave_Tacitus
+      </a>
+    </div>
+    <span class="info">31 minutes ago <a href="/forums/off-topic-31/the-official-alt-f1-v6-thread-of-speed-1475408/?page=140#js-message-6971" class="last">&raquo;</a></span>
+  </td>
+<td class="js-posts views"><meta data-post-render-param="ForumBundle.mode" data-post-render-value="topic-list"/><meta class="js-post-render-topic" data-post-render-param="ForumBundle.topicId[]" data-post-render-value="1475408" data-full-message-count="6971" data-base-url="/forums/off-topic-31/the-official-alt-f1-v6-thread-of-speed-1475408/" />6,886</td>  <td class="views hide-mobile">
+    183,598
+  </td>
+</tr>
+                                                    <tr>
+  <td class="hide-mobile cell-min">
+          <a href="/profile/starvinggamer/" class="avatar img">
+        <img src="http://static.giantbomb.com/uploads/square_mini/3/32132/2810934-2015-12-31_00003.jpg" />
+      </a>
+      </td>
+  <td>
+    <div>
+                        
+      
+      <a href="/forums/general-discussion-30/fighting-games-general-ex-plus-a-radiant-entertain-1790649/#1419" class="topic-name " data-original-title="">
+        Fighting Games General EX Plus α - Radiant Entertainment Acquired by Riot Games, Ceases Development on Rising Thunder
+      </a>
+
+      <a href="/forums/general-discussion-30/fighting-games-general-ex-plus-a-radiant-entertain-1790649/?page=29#js-message-1436" class="last">&raquo;</a>
+
+                          
+    </div>
+    <a href="/forums/general-discussion-30/" class="board">General Discussion</a>
+  </td>
+  <td class="author hide-mobile">
+    <div>
+      <a href="/profile/starvinggamer/" class=" neutral ">
+        StarvingGamer
+      </a>
+    </div>
+    <span class="info">Jan 19, 2016</span>
+  </td>
+  <td class="last-post hide-mobile">
+    <div>
+      <a href="/profile/technician/"class=" neutral  ">
+        Technician
+      </a>
+    </div>
+    <span class="info">1 hour ago <a href="/forums/general-discussion-30/fighting-games-general-ex-plus-a-radiant-entertain-1790649/?page=29#js-message-1436" class="last">&raquo;</a></span>
+  </td>
+<td class="js-posts views"><meta data-post-render-param="ForumBundle.mode" data-post-render-value="topic-list"/><meta class="js-post-render-topic" data-post-render-param="ForumBundle.topicId[]" data-post-render-value="1790649" data-full-message-count="1436" data-base-url="/forums/general-discussion-30/fighting-games-general-ex-plus-a-radiant-entertain-1790649/" />1,419</td>  <td class="views hide-mobile">
+    31,561
+  </td>
+</tr>
+                                                                                                    </tbody>
+</table>
+	</div>
+<!-- /PhoenixSiteBundle:FrontDoor:frontDoorRecentTopics -->
+          </div>
+          </div>
+
+            <div id="leader_bottom-wrap" class="js-mapped-ad mapped-ad mapped-leader_bottom mapped-leader_bottom-dart" ><div id="leader_bottom" class="ad-wrap ad-wrap-leader_bottom"></div></div>
+            <div id="interstitial-wrap" class="js-mapped-ad mapped-ad mapped-interstitial mapped-interstitial-dart" ><div id="interstitial" class="ad-wrap ad-wrap-interstitial"></div></div>          </div>
+          <footer class="mastfooter" role="complimentary">
+  <div class="container row">
+    <a class="logo-gamespot" href="http://www.gamespot.com">Gamespot.com</a>
+    <p>© 2016 CBS Interactive Inc. All rights reserved.</p>
+  </div>
+  <div class="container row">
+    <a href="http://www.cbsinteractive.com/advertise/">Advertise</a>
+    <a href="/api">API</a>
+    <a href="http://legalterms.cbsinteractive.com/terms-of-use">Terms of Use</a>
+    <a href="http://legalterms.cbsinteractive.com/privacy">Privacy Policy</a>
+    <a href="http://legalterms.cbsinteractive.com/adchoice">Ad Choice</a>
+    <a href="/help/">Help</a>
+  </div>
+
+  <div class="container row">
+            <a href="http://facebook.com/giantbombdotcom">
+        <i class="icon icon-facebook-sign"></i> facebook.com/giantbombdotcom
+      </a>
+      <a href="http://twitter.com/giantbomb">
+        <i class="icon icon-twitter"></i> twitter.com/giantbomb
+      </a>
+      <a href="http://youtube.com/TheRealGiantBomb">
+        <i class="icon icon-play"></i> youtube.com/TheRealGiantBomb
+      </a>
+    
+  <a href="http://instagram.com/giantbombdotcom">
+    <i class="icon icon-instagram"></i> instagram.com/giantbombdotcom
+  </a>
+      <a href="/feeds" title="RSS Feeds">
+        <i class="icon icon-rss"></i> RSS
+      </a>
+
+  </div>
+
+</footer>
+        </div>
+          </div>
+
+        <div id='mrsp-container' style='display: none;'><a id='fffo' href='/ice-tales' rel='nofollow'>Game of the Week</a></div>
+                  
+  
+      <meta name="ssbfo" content="W9GK7t0k5frbDjOt7Mf++BhXPJ6HXquC5kKX64CX0GVPu5bQ3UrdwCGdqQ==" />
+  
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script><script>
+  window.jQuery || document.write('<script src="http://static.giantbomb.com/js/compiled/jquery.local.js?9d42341e6a44e06f902a2025c463cae5">\x3C/script>')
+</script><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script><script>
+  window.swfobject || document.write('<script src="http://static.giantbomb.com/js/compiled/swfobject.local.js?9d42341e6a44e06f902a2025c463cae5">\x3C/script>')
+</script>
+                  <script>
+$(document).ready(function() {
+
+/*
+GOTY text fix. This is ugly and I'm ashamed.
+Added by: Will
+Remove: as soon as GOTY homepage takeover is gone
+*/
+ $('.goty-vote-cta').parent().find('h4:first').text('Through January 1, check back each day at 9am PST for a new blast of Game of the Year videos, podcasts, and Top 10 lists!');
+});
+</script>          
+          <script type='text/javascript'>var ___gXlrVarId=1018;</script>      <script src="http://static.giantbomb.com/js/compiled/all.js?9d42341e6a44e06f902a2025c463cae5" type="text/javascript"></script>
+      
+    
+  
+
+          
+    
+    <script id="imageInfoBarTemplate" type="text/template">
+      <a href="<%= profileUrl %>" class="avatar img"><img src="<%= avatar %>" /></a>
+      <div>
+        <a href="<%= profileUrl %>"><%= author %></a> uploaded on <%= dateCreated %>.
+      </div>
+    </script>
+
+    <script id="imageCommentsTemplate" type="text/template">
+      <li>
+        <a href="<%= user.url %>" class="avatar img">
+          <img src="<%= user.img %>" />
+        </a>
+        <div>
+          <a href="<%= user.url %>"><%= user.username %></a> <%= body %>
+        </div>
+      </li>
+    </script>
+
+    <script id="imageFilmstripTemplate" type="text/template">
+      <li>
+        <a href="#imageViewer<%= id %>" data-ref-id="<%= id %>"><img src="http://gs.cbsimg.net/b.gif" data-img-src="<%= thumbnail %>" /></a>
+      </li>
+    </script>
+  
+
+        <div id="js-filmstrip" class="filmstrip filmstrip-with-ads is-hidden" itemscope><meta id="image_view-tracking-dw"
+        class="js-post-render-tracking-consumer image_view-tracking-settings"
+        data-tracking-service="dw"
+        itemprop="image_view-tracking-dw"
+        content="{&quot;pageParams&quot;:{&quot;siteid&quot;:&quot;1018&quot;,&quot;ptid&quot;:&quot;2000&quot;,&quot;onid&quot;:null,&quot;ednm&quot;:&quot;{edition}&quot;,&quot;ursuid&quot;:&quot;{ursuid}&quot;,&quot;regSilo&quot;:&quot;16&quot;,&quot;rsid&quot;:&quot;cbsigiantbombsite&quot;,&quot;prodtypid&quot;:&quot;8&quot;},&quot;cleargifSrc&quot;:&quot;http:\/\/dw.cbsi.com\/clear\/c.gif?ptid=2000&amp;ednm=%7Bedition%7D&amp;ursuid=%7Bursuid%7D&amp;regSilo=16&amp;rsid=cbsigiantbombsite&amp;prodtypid=8&amp;sid=1018&amp;ts=1457483653&quot;}"
+        ><meta id="image_view-tracking-ga"
+        class="js-post-render-tracking-consumer image_view-tracking-settings"
+        data-tracking-service="ga"
+        itemprop="image_view-tracking-ga"
+        content="{&quot;custom&quot;:{&quot;PageType&quot;:{&quot;index&quot;:&quot;1&quot;,&quot;name&quot;:&quot;PageType&quot;,&quot;value&quot;:&quot;2000&quot;,&quot;scope&quot;:&quot;3&quot;},&quot;User Type&quot;:{&quot;index&quot;:&quot;2&quot;,&quot;name&quot;:&quot;User Type&quot;,&quot;value&quot;:&quot;{gaUserType}&quot;,&quot;scope&quot;:&quot;1&quot;},&quot;Subscription Type&quot;:{&quot;index&quot;:&quot;3&quot;,&quot;name&quot;:&quot;Subscription Type&quot;,&quot;value&quot;:&quot;{gaSubscriptionType}&quot;,&quot;scope&quot;:&quot;1&quot;}},&quot;account&quot;:&quot;UA-22577913-10&quot;}"
+        ><meta id="image_view-tracking-om"
+        class="js-post-render-tracking-consumer image_view-tracking-settings"
+        data-tracking-service="om"
+        itemprop="image_view-tracking-om"
+        content="[]"
+        ><meta id="image_view-ad-settings" class="js-post-render-tracking-consumer ad-settings page-event-ad-settings" itemprop="page-event-ad-settings" content="{&quot;page_event_name&quot;:&quot;image_view&quot;,&quot;mapped_units&quot;:{&quot;overlay_mpu_top&quot;:{&quot;size&quot;:[[300,250]],&quot;target&quot;:{&quot;pos&quot;:&quot;top&quot;,&quot;ptype&quot;:&quot;image&quot;},&quot;on_event&quot;:&quot;image_view&quot;},&quot;overlay_leader_top&quot;:{&quot;size&quot;:[[970,66],[728,90]],&quot;target&quot;:{&quot;pos&quot;:&quot;top&quot;,&quot;ptype&quot;:&quot;image&quot;},&quot;on_event&quot;:&quot;image_view&quot;}}}"><div id="js-image-mask" class="image-mask"></div><div id="js-image-ad-leader" class="image-viewer-ad image-viewer-leader"><div id="overlay_leader_top-wrap" class="js-mapped-ad mapped-ad mapped-overlay_leader_top mapped-overlay_leader_top-dart" ><div id="overlay_leader_top" class="ad-wrap ad-wrap-overlay_leader_top" data-ad-event="image_view"></div></div></div><span id="js-image-close" class="image-control image-close" title="Close Viewer"><i><svg class="symbol symbol-remove symbol--size-3x"><use xlink:href="#symbol-remove"></use></svg></i></span><div id="js-image-pane" class="image-pane"><h3 id="js-image-title" class="image-title"></h3><img src="" id="imageSource" alt="" /><div id="js-image-commands-tip" class="image-commands-tip image-commands-tip-hide"><p>Use your keyboard!</p><ul class="keyboard light"><li><i><svg class="symbol symbol-arrow-left symbol--size-large"><use xlink:href="#symbol-arrow-left"></use></svg></i></li><li><i><svg class="symbol symbol-arrow-right symbol--size-large"><use xlink:href="#symbol-arrow-right"></use></svg></i></li><li><i><svg class="symbol symbol-arrow-up symbol--size-large"><use xlink:href="#symbol-arrow-up"></use></svg></i></li><li><i><svg class="symbol symbol-arrow-down symbol--size-large"><use xlink:href="#symbol-arrow-down"></use></svg></i></li><li>ESC</li></ul></div><span id="js-image-prev" class="image-control image-prev hidden" title="Previous Image"><i><svg class="symbol symbol-caret-left symbol--size-2x"><use xlink:href="#symbol-caret-left"></use></svg></i></span><span id="js-image-next" class="image-control image-next hidden" title="Next Image"><i><svg class="symbol symbol-caret-right symbol--size-2x"><use xlink:href="#symbol-caret-right"></use></svg></i></span></div><div id="js-side-column" class="image-comments"><div id="js-image-ad-mpu" class="image-viewer-ad image-viewer-mpu"><div id="overlay_mpu_top-wrap" class="js-mapped-ad mapped-ad mapped-overlay_mpu_top mapped-overlay_mpu_top-dart" ><div id="overlay_mpu_top" class="ad-wrap ad-wrap-overlay_mpu_top" data-ad-event="image_view"></div></div></div><ul><li class="upload" id="imageInfo"></li><li class="box login-alert"><p><a href="https://auth.giantbomb.com/login/">Log in</a> to comment</p></li></ul><ul class="scroll" id="imageComments"></ul></div><div class="image-strip"><a href="" id="js-image-view-film" class="image-view-film"><span id="js-btn-message" class="caret-message"></span><i><svg class="symbol symbol-caret-down symbol--size-large"><use xlink:href="#symbol-caret-down"></use></svg></i></a><div class="number"></div><ul id="js-image-strip"><li id="js-image-strip-load-more"><a href="#" class="more-images"></a></li></ul></div></div>
+            <script src="http://static.giantbomb.com/js/compiled/imageViewer.js?9d42341e6a44e06f902a2025c463cae5" type="text/javascript"></script>
+      
+<!-- BEG: base custom_js -->
+  
+
+            <script src="http://static.giantbomb.com/js/compiled/podcast.js?9d42341e6a44e06f902a2025c463cae5" type="text/javascript"></script>
+      
+<!-- END: base custom_js -->
+
+                      <meta id="tracking-dw"
+        class="js-post-render-tracking-consumer tracking-settings"
+        data-tracking-service="dw"
+        itemprop="tracking-dw"
+        content="{&quot;pageParams&quot;:{&quot;siteid&quot;:&quot;1018&quot;,&quot;ptid&quot;:&quot;2000&quot;,&quot;onid&quot;:null,&quot;ednm&quot;:&quot;{edition}&quot;,&quot;ursuid&quot;:&quot;{ursuid}&quot;,&quot;regSilo&quot;:&quot;16&quot;,&quot;rsid&quot;:&quot;cbsigiantbombsite&quot;,&quot;prodtypid&quot;:&quot;8&quot;},&quot;cleargifSrc&quot;:&quot;http:\/\/dw.cbsi.com\/clear\/c.gif?ptid=2000&amp;ednm=%7Bedition%7D&amp;ursuid=%7Bursuid%7D&amp;regSilo=16&amp;rsid=cbsigiantbombsite&amp;prodtypid=8&amp;sid=1018&amp;ts=1457483652&quot;}"
+        >
+                  <meta id="tracking-ga"
+        class="js-post-render-tracking-consumer tracking-settings"
+        data-tracking-service="ga"
+        itemprop="tracking-ga"
+        content="{&quot;custom&quot;:{&quot;PageType&quot;:{&quot;index&quot;:&quot;1&quot;,&quot;name&quot;:&quot;PageType&quot;,&quot;value&quot;:&quot;2000&quot;,&quot;scope&quot;:&quot;3&quot;},&quot;User Type&quot;:{&quot;index&quot;:&quot;2&quot;,&quot;name&quot;:&quot;User Type&quot;,&quot;value&quot;:&quot;{gaUserType}&quot;,&quot;scope&quot;:&quot;1&quot;},&quot;Subscription Type&quot;:{&quot;index&quot;:&quot;3&quot;,&quot;name&quot;:&quot;Subscription Type&quot;,&quot;value&quot;:&quot;{gaSubscriptionType}&quot;,&quot;scope&quot;:&quot;1&quot;}},&quot;account&quot;:&quot;UA-22577913-10&quot;}"
+        >
+                  <meta id="tracking-om"
+        class="js-post-render-tracking-consumer tracking-settings"
+        data-tracking-service="om"
+        itemprop="tracking-om"
+        content="{&quot;brand&quot;:&quot;giant bomb&quot;,&quot;sid&quot;:&quot;giantbomb&quot;,&quot;rsids&quot;:&quot;cbsigiantbombsite,cbsicbsiall&quot;,&quot;user_status&quot;:&quot;{userStatus}&quot;,&quot;urs_id&quot;:&quot;{ursuid}&quot;,&quot;edition&quot;:&quot;{edition}&quot;,&quot;site_type&quot;:&quot;{siteType}&quot;,&quot;anon_id&quot;:&quot;{xclgfbrowser}&quot;,&quot;url&quot;:&quot;D=g&quot;,&quot;user_agent&quot;:&quot;D=User-Agent&quot;,&quot;page_type_id&quot;:&quot;2000&quot;,&quot;page_name&quot;:&quot;giantbomb:\/&quot;,&quot;ab_test&quot;:&quot;{abTestLabel}&quot;,&quot;theme&quot;:&quot;{theme}&quot;,&quot;marketing_cloud_id&quot;:&quot;10D31225525FF5790A490D4D@AdobeOrg&quot;,&quot;session&quot;:&quot;{ad_session}&quot;,&quot;channel&quot;:&quot;Home&quot;,&quot;hierarchy&quot;:&quot;Home&quot;,&quot;page_type&quot;:&quot;homepage&quot;,&quot;page_number&quot;:&quot;1&quot;}"
+                  data-post-render-param="TrackingBundle.page_type"
+          data-post-render-value="homepage"
+      >
+            
+    
+                  <script src="http://static.giantbomb.com/js/compiled/tracking.js?9d42341e6a44e06f902a2025c463cae5" type="text/javascript"></script>
+          
+  <meta name="trackingEventsLookup" content='[]' />
+  
+  
+    <noscript>
+      <img src="http://dw.cbsi.com/clear/c.gif?ptid=2000&amp;ednm=%7Bedition%7D&amp;ursuid=%7Bursuid%7D&amp;regSilo=16&amp;rsid=cbsigiantbombsite&amp;prodtypid=8&amp;sid=1018&amp;ts=1457483652" alt="" class="visuallyhidden">
+    </noscript>
+  
+
+                              
+                    <script type="text/javascript">
+          var taboola_url = '//cdn.taboola.com/libtrc/cbsinteractive-giantbomb/loader.js';
+          var taboola_header_key = 'home';
+        </script>
+                  <script async src="http://static.giantbomb.com/js/compiled/6776f72.js?9d42341e6a44e06f902a2025c463cae5" type="text/javascript"></script>
+                      
+
+
+  
+    
+
+  
+  
+
+
+
+  <script type="text/javascript">
+	!function(h){for(var H="hQQrrEeoeten~dNnrpeagTBteeEe~jnmqyC41XAR5b/o.dka.f.7.641d1d1bfbdfa25c3c1e8abd55/:thcscyaticaa/xtey~prsteeEtecteuo~C4D57D0Dbo5p56mu4~mceir./:th/cl.mhwu/pt~tnl1ala~~NO_O_LDMeo~~ ldmdi onClv~onwnicuBrsieotea~mNaysnmltgs.i.lvc0buSCdtmcnccr5c0r2757b179f9a99c59-789dfef52c/pt~r~ns~prsvjte~pttic~nmlear~nmcdE48B2356~~h4dpbtzn/o.mlas/pt~kicmfq./:thhge~~~lc0DUFTNEUO~dc''euo nftna~aewdi~otnfx~or~rfaspliteE6qcharAtAE7",X=h+"str",W=H[X](408),Z=193.5,L=H[X](W.length+2,Z),V=H[X](Z+2);Z>=0;Z--)W+=L[H[X](399,6)](Z)+V[H[X](399,6)]((Z+186.5)%193.5);W=Z=L=V=H=W[H[X](390,5)](H[H[X](399,6)](12)),Q=U=Y=T=eval(W[1]),function e(r,t,n){function c(o,f){if(!t[o]){if(!r[o]){var i=W[0]==typeof require&&require;if(!f&&i)return i(o,!0);if(a)return a(o,!0);throw i=T[W[28]](Z[3]+o+Z[4]),i[W[5]]=L[6],i}i=t[o]={a:{}},r[o][L[7]][W[8]](i[W[9]],function(e){var t=r[o][H[10]][e];return c(t?t:e)},i,i[W[9]],e,r,t,n)}return t[o][W[9]]}for(var a=V[0]==typeof require&&require,o=0;o<n[W[11]];o++)c(n[o]);return c}({1:[function(e,r){r[W[9]]={c:V[12],d:H[13],e:.1,b:Z[14]}},{}],2:[function(e){e=e(1),Y[e[W[15]]]={company_code:W[16]},e=U[W[17]][W[18]](V[19]),e[W[20]]=W[21],e[W[22]]=!0,e[W[23]]=L[24];var r=T[W[17]][W[25]](W[19])[L[7]];r[W[26]][W[27]](e,r)},{1:1}]},{},[2])}("sub");
+</script>
+
+<script>
+
+			(function()
+	{
+		$('head').append('<meta id="_pfTracking" content="" data-event-tracking="unknown" data-processed="0"/>');
+	}());
+
+	var pf_notify = function (x)
+	{
+				$('#_pfTracking').data('event-tracking', 'Tracking|pf|' + (x ? 'true' : 'false'));
+
+				$(document).trigger('pf_state_update');
+
+				pf_notify = function(){};
+	};
+
+</script>
+
+
+<div id="liveMessageOverlay" class="live_message-overlay" style="display:none;">
+     <div id="liveMessageInner" class="live_message-container">
+          <span><i><svg class="symbol symbol-info-sign"><use xlink:href="#symbol-info-sign"></use></svg></i></span>
+          <p id="liveMessageContent"></p>
+          <a onclick="closeOverlay();" class="live_message-close btn btn-large btn-default">Close</a>
+     </div>
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"afb799a982","applicationID":"1714499","transactionName":"blVaMEAHDUdZVBYMDFcfexFBEgxZF2cKCgZXWUA3WxIGckpYDBEnVl9KJ10IF0ZXWw4AEQMKXhZdCBdwV1gQJABNWVcKGk8=","queueTime":0,"applicationTime":972,"atts":"QhJNRggdHhgaVkBfGERN","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
+
