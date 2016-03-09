@@ -12,6 +12,7 @@
   "dependencies": {
     "babel": "^5.8.35",
     "cheerio": "^0.20.0",
+    "cors": "^2.7.1",
     "express": "^4.13.4"
   }
 }
