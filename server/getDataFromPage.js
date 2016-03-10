@@ -18,11 +18,12 @@ export default function getDataFromPage (markup) {
   const title = $link.text().trim()
   let isStreamLive = $headerPromo.is('.live')
   let startsAt
+  let flavourText = $('.kubrick-info p').first().text().trim()
 
   const $countdown = $headerPromo.find('.js-time-countdown')
   if ($link.length) {
-    startsAt = parseInt($countdown.text().trim(), 10)
-    isStreamLive = false
+    startsAt = parseInt($countdown.text().trim(), 10) * 1000
+    isStreamLive = startsAt < (new Date()).getTime()
   }
 
   return {
@@ -31,5 +32,6 @@ export default function getDataFromPage (markup) {
     title,
     isStreamLive,
     startsAt,
+    flavourText,
   }
 }
