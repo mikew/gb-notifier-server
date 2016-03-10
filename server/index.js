@@ -23,6 +23,15 @@ app.get('/live.xml', (req, res) => {
   getDataFromCache()
       .then((data) => {
         res.header('Content-Type', 'text/xml')
+        let entry = ''
+        if (data.isStreamLive) {
+          entry = `<item>
+  <title>${data.title}</title>
+  <link>http://www.giantbomb.com/#${data.id}</link>
+  <description>${data.title}</description>
+  <guid isPermaLink="false">${data.id}</guid>
+</item>`
+        }
         res.send(`<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 
@@ -30,12 +39,7 @@ app.get('/live.xml', (req, res) => {
   <title>gb-notifier-server</title>
   <link>http://www.giantbomb.com/</link>
   <description>gb-notifier-server</description>
-  <item>
-    <title>${data.title}</title>
-    <link>http://www.giantbomb.com/#${data.id}</link>
-    <description>${data.title}</description>
-    <guid isPermaLink="false">${data.id}</guid>
-  </item>
+  ${entry}
 </channel>
 
 </rss>`)
