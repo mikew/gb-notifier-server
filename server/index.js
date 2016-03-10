@@ -28,7 +28,7 @@ app.get('/live.xml', (req, res) => {
           entry = `<item>
   <title>${data.title}</title>
   <link>http://www.giantbomb.com/#${data.id}</link>
-  <description>${data.title}</description>
+  <description>${data.flavourText}</description>
   <guid isPermaLink="false">${data.id}</guid>
 </item>`
         }
