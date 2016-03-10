@@ -19,6 +19,33 @@ app.get('/', (req, res) => {
       })
 })
 
+app.get('/live.xml', (req, res) => {
+  getDataFromCache()
+      .then((data) => {
+        res.send(`<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>gb-notifier-server</title>
+  <link>http://www.giantbomb.com/</link>
+  <description>gb-notifier-server</description>
+  <item>
+    <title>${data.title}</title>
+    <link>http://www.giantbomb.com/#${data.id}</link>
+    <description>${data.title}</description>
+    <guid isPermaLink="false">${data.id}</guid>
+  </item>
+</channel>
+
+</rss>`)
+      })
+      .catch((err) => {
+        res.json({
+          error: err.toString(),
+        })
+      })
+})
+
 app.listen(port, () => {
   console.log(`app listening on 0.0.0.0:${port}`)
 })
