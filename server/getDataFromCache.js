@@ -53,7 +53,7 @@ export default function getDataFromCache () {
 
 function isDataStale ({ fetchedAt = 0 }) {
   // 1 hour
-  const staleTime = 1000 * 60 * 60 * 60
+  const staleTime = 1000 * 60 * 60
   //const staleTime = 10 * 1000
   const now = (new Date()).getTime()
 
