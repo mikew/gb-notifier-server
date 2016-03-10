@@ -12,7 +12,7 @@ const options = {
 }
 
 export default function getDataFromCache () {
-  const cacheFile = './t.json'
+  const cacheFile = './t2.json'
 
   return new Promise((resolve, reject) => {
     //console.log(new Date(), 'Checking ...')
