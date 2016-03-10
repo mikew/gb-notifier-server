@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
 app.get('/live.xml', (req, res) => {
   getDataFromCache()
       .then((data) => {
+        res.header('Content-Type', 'text/xml')
         res.send(`<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 
