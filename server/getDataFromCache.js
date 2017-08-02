@@ -1,6 +1,10 @@
-import { readFile, writeFile } from 'fs'
-import getDataFromPage from './getDataFromPage'
-import getPagePromise from './getPagePromise'
+const { promisify } = require('util')
+const fs = require('fs')
+const getDataFromPage = require('./getDataFromPage')
+const getPagePromise = require('./getPagePromise')
+
+const readFile = promisify(fs.readFile)
+const writeFile = promisify(fs.writeFile)
 
 const options = {
   host: 'www.giantbomb.com',
@@ -10,45 +14,33 @@ const options = {
   },
 }
 
-export default function getDataFromCache () {
+module.exports = async function getDataFromCache () {
   const cacheFile = './t2.json'
 
-  return new Promise((resolve, reject) => {
-    //console.log(new Date(), 'Checking ...')
-    readFile(cacheFile, 'utf8', (errRead, data) => {
-      if (errRead) {
-        //console.error(errRead)
-        data = {}
-      } else {
-        data = JSON.parse(data)
-      }
+  let data = {}
+  try {
+    data = JSON.parse(await readFile(cacheFile, 'utf8'))
+  } catch (err) {
+    // console.error(err)
+  }
 
-      if (isDataStale(data)) {
-        //console.log(new Date(), 'Data was stale')
+  if (isDataStale(data)) {
+    const markup = await getPagePromise(options)
+    const newData = getDataFromPage(markup)
 
-        getPagePromise(options).then(getDataFromPage).then((newData) => {
-          newData.id = data.id
-          newData.fetchedAt = (new Date()).getTime()
-          if (newData.title !== data.title) {
-            newData.id = Math.random().toString(36)
-          }
+    newData.id = data.id
+    newData.fetchedAt = (new Date()).getTime()
 
-          writeFile(cacheFile, JSON.stringify(newData), 'utf8', (errWrite) => {
-            if (errWrite) {
-              reject(errWrite)
-              return
-            }
+    if (newData.title !== data.title) {
+      newData.id = Math.random().toString(36)
+    }
 
-            resolve(newData)
-          })
-        })
-        .catch(reject)
-      } else {
-        //console.log(new Date(), 'Data was fresh')
-        resolve(data)
-      }
-    })
-  })
+    await writeFile(cacheFile, JSON.stringify(newData), 'utf8')
+
+    return newData
+  }
+
+  return data
 }
 
 function isDataStale ({ fetchedAt = 0 }) {

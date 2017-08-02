@@ -1,6 +1,6 @@
-import https from 'https'
+const https = require('https')
 
-export default function getPagePromise (options) {
+module.exports = function getPagePromise (options) {
   return new Promise((resolve, reject) => {
     https
         .get(options, (res) => {

@@ -11,9 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "cheerio": "^0.20.0",
-  },
-  "devDependencies": {
-    "babel": "^5.8.35"
     "kcors": "^2.2.1",
     "koa": "^2.3.0",
     "koa-router": "^7.2.1"

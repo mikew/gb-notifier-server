@@ -6,16 +6,14 @@ COPY package.json .
 
 # Dependencies (Production and Development)
 FROM base AS dependencies
-COPY server server
 RUN NODE_ENV=production npm install --no-progress \
   && cp -a node_modules node_modules_production \
-  && npm install \
-  && ./node_modules/.bin/babel --out-dir server-compiled/ server/
+  && npm install
 
 # Final release image
 FROM base AS release
 COPY --from=dependencies /app/node_modules_production node_modules
-COPY --from=dependencies /app/server-compiled server-compiled
+COPY server server
 
 EXPOSE 5000
-ENTRYPOINT ["node", "server-compiled"]
+ENTRYPOINT ["node", "server"]

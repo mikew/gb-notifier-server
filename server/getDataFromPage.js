@@ -1,6 +1,6 @@
-import cheerio from 'cheerio'
+const cheerio = require('cheerio')
 
-export default function getDataFromPage (markup) {
+module.exports = function getDataFromPage (markup) {
   const $ = cheerio.load(markup)
   const $headerPromo = $('.header-promo')
 
