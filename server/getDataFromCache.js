@@ -4,7 +4,6 @@ import getPagePromise from './getPagePromise'
 
 const options = {
   host: 'www.giantbomb.com',
-  port: 80,
   path: '/',
   headers: {
     'user-agent': 'gb-notifier-server (https://www.github.com/mikew/gb-notifier-server)',

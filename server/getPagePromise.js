@@ -1,8 +1,8 @@
-import http from 'http'
+import https from 'https'
 
 export default function getPagePromise (options) {
   return new Promise((resolve, reject) => {
-    http
+    https
         .get(options, (res) => {
           let content = ''
           res.setEncoding('utf8')
