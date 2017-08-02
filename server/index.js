@@ -1,38 +1,35 @@
-import getDataFromCache from './getDataFromCache'
-import express from 'express'
-import cors from 'cors'
+const getDataFromCache = require('./getDataFromCache')
+const Koa = require('koa')
+const Router = require('koa-router')
+const cors = require('kcors')
 
-const app = express()
+const app = new Koa()
+const router = new Router()
 const port = process.env.PORT || 5000
 
 app.use(cors())
 
-app.get('/', (req, res) => {
-  getDataFromCache()
-      .then((data) => {
-        res.json(data)
-      })
-      .catch((err) => {
-        res.json({
-          error: err.toString(),
-        })
-      })
+router.get('/', async (ctx) => {
+  const data = await getDataFromCache()
+  ctx.body = data
 })
 
-app.get('/live.xml', (req, res) => {
-  getDataFromCache()
-      .then((data) => {
-        res.header('Content-Type', 'text/xml')
-        let entry = ''
-        if (data.isStreamLive) {
-          entry = `<item>
+router.get('/live.xml', async (ctx) => {
+  const data = await getDataFromCache()
+
+  ctx.type = 'text/xml'
+  let entry = ''
+
+  if (data.isStreamLive) {
+    entry = `<item>
   <title>${data.title}</title>
   <link>http://www.giantbomb.com/#${data.id}</link>
   <description>${data.flavourText}</description>
   <guid isPermaLink="false">${data.id}</guid>
 </item>`
-        }
-        res.send(`<?xml version="1.0" encoding="UTF-8" ?>
+  }
+
+  ctx.body = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 
 <channel>
@@ -42,14 +39,11 @@ app.get('/live.xml', (req, res) => {
   ${entry}
 </channel>
 
-</rss>`)
-      })
-      .catch((err) => {
-        res.json({
-          error: err.toString(),
-        })
-      })
+</rss>`
 })
+
+app.use(router.routes())
+app.use(router.allowedMethods())
 
 app.listen(port, () => {
   console.log(`app listening on 0.0.0.0:${port}`)
