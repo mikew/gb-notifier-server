@@ -9,6 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "8.2.1"
+  },
   "dependencies": {
     "cheerio": "^0.20.0",
     "kcors": "^2.2.1",
