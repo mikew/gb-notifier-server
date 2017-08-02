@@ -42,6 +42,7 @@ export default function getDataFromCache () {
             resolve(newData)
           })
         })
+        .catch(reject)
       } else {
         //console.log(new Date(), 'Data was fresh')
         resolve(data)
